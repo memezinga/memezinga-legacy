@@ -14,5 +14,10 @@
     "name": "Open Source Weekends",
     "url": "http://osweekends.com"
   },
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "gulp-debug": "3.1.0",
+    "gulp": "3.9.1",
+    "gulp-eslint": "4.0.0"
+  }
 }
