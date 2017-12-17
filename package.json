@@ -16,8 +16,9 @@
   },
   "license": "GPL-3.0",
   "devDependencies": {
-    "gulp-debug": "3.1.0",
     "gulp": "3.9.1",
-    "gulp-eslint": "4.0.0"
+    "gulp-debug": "3.1.0",
+    "gulp-eslint": "4.0.0",
+    "gulp-jsdoc3": "1.0.1"
   }
 }

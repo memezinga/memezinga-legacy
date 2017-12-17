@@ -2,7 +2,16 @@
 
 var gulp = require('gulp'),
     eslint = require('gulp-eslint'),
-    debug = require('gulp-debug');
+    debug = require('gulp-debug'),
+    jsdoc = require('gulp-jsdoc3');
+
+gulp.task('jsdoc', function(cb) {
+    var config = require('./docs/jsdoc.json');
+    gulp.src(['./docs/README.md', './**/*.js', '!./gulp-tasks/**', '!./docs/**', '!./dist/**', '!./node_modules/**', '!./test/**.js', '!gulpfile.js', '!./coverage'], {read: false})
+    .pipe(debug({title: 'JSDoc (Scope):'}))
+    .pipe(jsdoc(config, cb));
+});
+
 
 gulp.task('lint', function() {
     var filesToLint = [
