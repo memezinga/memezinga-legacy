@@ -1,0 +1,18 @@
+{
+  "name": "generador-de-memes",
+  "version": "0.1.0",
+  "description": "Generador de memes oficial de OSW",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OSWeekends/generador-de-memes/issues/11.git"
+  },
+  "author": {
+    "name": "Open Source Weekends",
+    "url": "http://osweekends.com"
+  },
+  "license": "GPL-3.0"
+}
