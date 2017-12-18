@@ -4,7 +4,7 @@ function datesDif(){
     var today=new Date()
     var days=0
     var hours=0
-    var minuts=0
+    var minutes=0
     var seconds=0
 
     var diference=(date-today)/1000
@@ -18,22 +18,22 @@ function datesDif(){
     diference=diference-(86400*days)
     hours=Math.floor(diference/3600)
     diference=diference-(3600*hours)
-    minuts=Math.floor(diference/60)
-    diference=diference-(60*minuts)
+    minutes=Math.floor(diference/60)
+    diference=diference-(60*minutes)
     seconds=Math.floor(diference)
     
     if(hours <10 ){
         hours = "0" + hours;
     }
-    if(minuts <10 ){
-        minuts = "0" + minuts;
+    if(minutes <10 ){
+        minutes = "0" + minutes;
     }
     if(seconds <10 ){
         seconds = "0" + seconds;
     }
     document.getElementById("days").innerHTML=days;
     document.getElementById("hours").innerHTML=hours;
-    document.getElementById("minuts").innerHTML=minuts;
+    document.getElementById("minutes").innerHTML=minutes;
     document.getElementById("seconds").innerHTML=seconds;
     
     
