@@ -8,36 +8,62 @@
 * Here we declarate some variables:
 */
 var cosas= document.getElementsByClassName('twitter-hashtag');
-var hashtag = '#felizLunes'
 var listaHashtag = [];
-var lista = []
+var lista = [];
 var total = '';
+var posicion = 0;
 /**
 * Now we make a function to look for our hashtag in the 'array' cosas,
 * is our hashtag counter:
 */
 
-function cuentaHastag(){
+function cuentaHashtag(){
 
     for (var i = 0; i < cosas.length; i++) {
         listaHashtag[i] = cosas[i].lastChild.innerText;
         listaHashtag[i] = listaHashtag[i].toLowerCase();
-
-        if (listaHashtag[i] === 'felizlunes') {
+        // Here you can put your hashtag without the #
+        if (listaHashtag[i] === 'memezinga') {
             lista.push(listaHashtag[i]);
         };
-    } return lista;
+    }
+    total = lista.length;
+
+    return total;
 };
 /** Time to make a function that will make automathic scroll, yes we are lazy... XD:
 */
-
 function pageScroll() {
+    window.scrollBy(0,100);
 
-    window.scrollBy(0,50);
-    setTimeout('pageScroll()',1000);
-    setTimeout('cuentaHastag()',1500);
-    total = lista.length;
+    if (posicion < scrollY) {
+        setTimeout('pageScroll()',1000);
+        posicion = scrollY;
+    } else {
+        // Empty the lista array and execute again the hashtag counter:
+        lista = [];
+        cuentaHashtag();
+    }
+    return lista;
 };
+
+
+setTimeout('pageScroll()',1000);
+
+
+// do {
+//     function pageScroll() {
+//
+//         window.scrollBy(0,50);
+//         posicion = scrollY;
+//         setTimeout('pageScroll()',1000);
+//         // setTimeout('cuentaHashtag()',1500);
+//         total = lista.length;
+//
+//         return posicion;
+//     };
+// } while (posicion < scrollY);
+// cuentaHashtag();
 
 /**
 Just we call to the scroll function and this one will call to the hashtag counter.
@@ -45,4 +71,3 @@ You can see the lista.length to know how many hashtags are in the page.
 Hope you like it!!
 And yes... the console.log() don't run...
 */
-pageScroll();
