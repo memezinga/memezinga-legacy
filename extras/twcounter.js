@@ -1,19 +1,4 @@
-// var cosas= document.getElementsByClassName('twitter-hashtag');
-// var hashtag = "memezinga"
-// var lista = []
-// var contador= []
-// var total = 0;
-// for (var i = 0; i < cosas.length; i++) {
-//     lista.push(cosas[i].lastChild.innerText)
-// }
-//
-//
-// for (var i = 0; i < lista.length; i++) {
-//
-//     if(lista[i].toLowerCase() === hashtag){
-//         total ++
-//     }
-// }
+
 /**
 * Some code to count the number of a hashtag in a Twitter page.
 * You can change the hashtag value to look for your favourite one ;)
@@ -26,7 +11,7 @@ var cosas= document.getElementsByClassName('twitter-hashtag');
 var hashtag = '#felizLunes'
 var listaHashtag = [];
 var lista = []
-var total = 0;
+var total = '';
 /**
 * Now we make a function to look for our hashtag in the 'array' cosas,
 * is our hashtag counter:
@@ -51,6 +36,7 @@ function pageScroll() {
     window.scrollBy(0,50);
     setTimeout('pageScroll()',1000);
     setTimeout('cuentaHastag()',1500);
+    total = lista.length;
 };
 
 /**
