@@ -51,19 +51,6 @@ function pageScroll() {
 setTimeout('pageScroll()',1000);
 
 
-// do {
-//     function pageScroll() {
-//
-//         window.scrollBy(0,50);
-//         posicion = scrollY;
-//         setTimeout('pageScroll()',1000);
-//         // setTimeout('cuentaHashtag()',1500);
-//         total = lista.length;
-//
-//         return posicion;
-//     };
-// } while (posicion < scrollY);
-// cuentaHashtag();
 
 /**
 Just we call to the scroll function and this one will call to the hashtag counter.
