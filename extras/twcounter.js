@@ -18,7 +18,8 @@ var posicion = 0;
 */
 
 function cuentaHashtag(){
-
+    // Empty the lista array and execute again the hashtag counter:
+    lista = [];
     for (var i = 0; i < cosas.length; i++) {
         listaHashtag[i] = cosas[i].lastChild.innerText;
         listaHashtag[i] = listaHashtag[i].toLowerCase();
@@ -40,8 +41,6 @@ function pageScroll() {
         setTimeout('pageScroll()',1000);
         posicion = scrollY;
     } else {
-        // Empty the lista array and execute again the hashtag counter:
-        lista = [];
         cuentaHashtag();
     }
     return lista;
