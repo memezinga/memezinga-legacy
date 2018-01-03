@@ -1,6 +1,6 @@
 var interval;
 function datesDif(){
-    var date=new Date(2018,1,19,0,0)
+    var date=new Date(2018,0,19,0,0)
     var today=new Date()
     var days=0
     var hours=0
