@@ -33,7 +33,7 @@
 			<li class="dropdown">
 				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="global.html#cosas">cosas</a></li><li><a href="global.html#cuentaHashtag">cuentaHashtag</a></li><li><a href="global.html#pageScroll">pageScroll</a></li>
+					<li><a href="global.html#cosas">cosas</a></li><li><a href="global.html#cuentaHashtag">cuentaHashtag</a></li><li><a href="global.html#lista">lista</a></li><li><a href="global.html#listaHashtag">listaHashtag</a></li><li><a href="global.html#pageScroll">pageScroll</a></li><li><a href="global.html#setTimeout">setTimeout</a></li><li><a href="global.html#total">total</a></li>
 				</ul>
 			</li>
 			
@@ -144,17 +144,241 @@
             
 <hr>
 <dt class="name" id="cosas">
-    <h4 id="cosas"><span class="type-signature"></span>cosas<span class="type-signature"></span></h4>
+    <h4 id="cosas"><span class="type-signature"></span>cosas<span class="type-signature"> :array</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>Here we declarate some variables:</p>
+        <p>cosas: Make an Array with all the labels with 'twitter-hastag' in the page.</p>
     </div>
     
 
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">array</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="lista">
+    <h4 id="lista"><span class="type-signature"></span>lista<span class="type-signature"> :array</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>lista: Empty Array. Here we store just the #memezinga.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">array</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="listaHashtag">
+    <h4 id="listaHashtag"><span class="type-signature"></span>listaHashtag<span class="type-signature"> :array</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>listaHashtag: Empty Array. Here we store ALL the hastags.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">array</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="total">
+    <h4 id="total"><span class="type-signature"></span>total<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>total: Empty string</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
     
 
     
@@ -281,6 +505,51 @@ is our hashtag counter:</p>
     
 
     
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>the total of hashtags</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">function cuentaHashtag(){
+
+  // Empty the lista array and execute again the hashtag counter:
+  lista = [];
+  for (var i = 0; i &lt; cosas.length; i++) {
+      listaHashtag[i] = cosas[i].lastChild.innerText;
+      listaHashtag[i] = listaHashtag[i].toLowerCase();
+
+      // Here you can put your hashtag without the #
+      if (listaHashtag[i] === &#x27;memezinga&#x27;) {
+          lista.push(listaHashtag[i]);
+       };
+  }
+  total = lista.length;
+  return total;
+ };</pre>
+
 
     
 </dd>
@@ -359,6 +628,207 @@ is our hashtag counter:</p>
     
 
     
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>The array 'Lista' with all the hastags</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">function pageScroll() {
+   window.scrollBy(0,100);
+
+   if (posicion &lt; scrollY) {
+       setTimeout(&#x27;pageScroll()&#x27;,1000);
+       posicion = scrollY;
+   } else {
+       cuentaHashtag();
+   }
+   return lista;
+};</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setTimeout"><span class="type-signature"></span>setTimeout(pageScroll, 1000)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Just we call to the scroll function and this one will call to the hashtag counter.
+You can see the lista.length to know how many hashtags are in the page.
+Hope you like it!!
+And yes... the console.log() don't run...</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pageScroll</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>to make the automathic scroll</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>1000</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>miliseconds to repeat the function pageScroll()</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">setTimeout(&#x27;pageScroll()&#x27;,1000);</pre>
+
 
     
 </dd>
@@ -413,7 +883,7 @@ is our hashtag counter:</p>
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on December 25th 2017, 7:23:02 pm
+		on January 4th 2018, 7:26:22 pm
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
