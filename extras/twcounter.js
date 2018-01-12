@@ -30,6 +30,11 @@
 */
 var cosas= document.getElementsByClassName('twitter-hashtag');
 /**
+*@type {string}
+*@description hashtag: The hashtaw we want to count.
+*/
+var hashtag = "memezinga";
+/**
 *@type {array}
 *@description listaHashtag: Empty Array. Here we store ALL the hastags.
 */
@@ -76,41 +81,45 @@ function cuentaHashtag(){
         listaHashtag[i] = cosas[i].lastChild.innerText;
         listaHashtag[i] = listaHashtag[i].toLowerCase();
         // Here you can put your hashtag without the #
-        if (listaHashtag[i] === 'memezinga') {
+        if (listaHashtag[i] === hashtag) {
             lista.push(listaHashtag[i]);
         };
     }
-    total = lista.length;
+    total = lista.length-1;
 
     return total;
 };
 /**
 * @function pageScroll
 * @description Time to make a function that will make automathic scroll, yes we are lazy... XD:
-* @return {array} The array 'Lista' with all the hastags
+* @return the total times the hashtag has been twitted
 * @example
 * function pageScroll() {
-*    window.scrollBy(0,100);
-*
-*    if (posicion < scrollY) {
-*        setTimeout('pageScroll()',1000);
-*        posicion = scrollY;
-*    } else {
-*        cuentaHashtag();
-*    }
-*    return lista;
-* };
-*/
-function pageScroll() {
     window.scrollBy(0,100);
+    
 
     if (posicion < scrollY) {
         setTimeout('pageScroll()',1000);
         posicion = scrollY;
-    } else {
-        cuentaHashtag();
-    }
-    return lista;
+    } 
+    else {
+        cuentaHashtag()
+        document.querySelector("body").innerHTML='<div><h1>El Hashtag '+ hashtag+ 'se ha twitteado '+cuentaHashtag()+' veces</h1></div>'    }
+    
+};
+*/
+function pageScroll() {
+    window.scrollBy(0,100);
+    
+
+    if (posicion < scrollY) {
+        setTimeout('pageScroll()',1000);
+        posicion = scrollY;
+    } 
+    else {
+        cuentaHashtag()
+        document.querySelector("body").innerHTML='<div><h1>El Hashtag '+ hashtag+ ' se ha twitteado '+cuentaHashtag()+' veces</h1></div>'    }
+    
 };
 
 /**
@@ -124,7 +133,8 @@ function pageScroll() {
 * @example
 * setTimeout('pageScroll()',1000);
 */
-setTimeout('pageScroll()',1000);
+//setTimeout('pageScroll()',1000);
+pageScroll()
 
 /**
 Just we call to the scroll function and this one will call to the hashtag counter.
