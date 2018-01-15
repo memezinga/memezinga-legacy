@@ -1,0 +1,22 @@
+html, body, #container{
+    height: 100%;
+    margin: 0;
+}
+#backLoader{
+    background: #00000099;
+    position: fixed;
+    width: 100%;
+    height: 101%;
+    display: none;
+    z-index: 1;
+}
+.posicionLoader{
+    position: absolute;
+    width: 200px;
+    left: calc(50% - 100px);
+    top: calc(50% - 100px);
+}
+.posicionLoader img{
+    display: block;
+    margin: 0 auto;
+}
