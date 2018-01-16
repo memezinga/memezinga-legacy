@@ -22,27 +22,28 @@ function peticionAjax(url, callback) {
 }
 
 (function(){
-    
     peticionAjax("https://api.imgflip.com/get_memes",pintar)
 }());
 
 function pintar (datos){
     var results = datos.data.memes
     var html = '';
-    /*if(results.length === 0){
+    if(results.length === 0){
         setTimeout(function(){
-            alert("No se encontró el resultado.")
-            document.querySelector('.loading').remove();
+            alert("No se encontró el resultado.");
+            document.getElementById("backLoader").style.display="none";
         },1000);
-    }else{*/
-    results.forEach(function(element, i){
-        console.log(element)
-        /*document.querySelector(".container").innerHTML += html;
-        if(i>=results.length-1){
-            setTimeout(function(){
-                document.querySelector('.loading').remove();
-            },1000);
-        }*/
-    });
-    
+    }else{
+        document.getElementById("backLoader").style.display="block";
+        results.forEach(function(element, i){
+            setTimeout(function() {
+                console.log(element);
+                html = '<div class="containerImg"><a href="/meme-generator.html?id='+ element.id + '"><img src="' + element.url + '"><h4>' + element.name + '</h4></a></div>';
+                document.querySelector("#content").innerHTML += html;
+                if(i>=results.length-1){
+                    document.getElementById("backLoader").style.display="none";
+                }
+            }, i * 50);
+        });
+    }
 }
