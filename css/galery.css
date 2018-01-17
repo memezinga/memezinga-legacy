@@ -1,0 +1,55 @@
+html, body, #container{
+    height: 100%;
+    margin: 0;
+    background-color: #ff00ff;
+}
+#content{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+#backLoader{
+    background: #00000099;
+    position: fixed;
+    width: 100%;
+    height: 101%;
+    display: none;
+    z-index: 1;
+}
+.posicionLoader{
+    position: absolute;
+    width: 200px;
+    left: calc(50% - 100px);
+    top: calc(50% - 100px);
+}
+.posicionLoader img{
+    display: block;
+    margin: 0 auto;
+}
+.containerImg{
+    display: inline-block;
+    padding: 15px;
+    margin: 1px;
+    width: 200px;
+}
+.containerImg:nth-child(odd){
+    background-color: #bfbfbf;
+}
+.containerImg:nth-child(even){
+    background-color: #909090;
+}
+.containerImg h4{
+    white-space: nowrap;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.containerImg img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.containerImg a{
+    text-decoration: none;
+    color: #333;
+}
