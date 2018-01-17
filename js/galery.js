@@ -35,7 +35,7 @@
         xmlHttp.open("GET", url, true);
         xmlHttp.send();
     }
-    
+    /*comentario prueba*/
     if(sessionStorage.getItem('memes')){
         pintar(JSON.parse(sessionStorage.getItem('memes')));   
     }else{
