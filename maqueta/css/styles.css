@@ -162,13 +162,92 @@ body{
 .gallery{
     padding: 60px 0;
 }
-
-
-footer{
-    background: #333;
-    color: #FFF;
+.gallery .container-fluid{
+    padding: 0;
+}
+.gallery .box-center h2{
+    margin-bottom: 50px;
+}
+#backLoader{
+    background: #FFF;
+    position: fixed;
+    width: 100%;
+    height: 101%;
+    display: none;
+    z-index: 1;
+}
+.posicionLoader{
+    position: absolute;
+    width: 200px;
+    left: calc(50% - 100px);
+    top: calc(50% - 100px);
+}
+.posicionLoader img{
+    display: block;
+    margin: 0 auto;
+}
+.containerImg{
+    display: inline-block;
+    padding: 0;
+    width: calc(20% - 0px);
+    position: relative;
+    margin: -6px 0;  
+    cursor: pointer;
 }
 
+
+.containerImg:nth-child(odd){
+    background-color: #E3E3E3;
+}
+
+.containerImg:nth-child(even){
+    background-color: #333;
+}
+.containerImg h4{
+    color: #EEEEEE;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+}
+.containerImg:nth-child(odd) h4{
+    color: #333;
+}
+
+.containerImg img{
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+.containerImg a{
+    text-decoration: none;
+    color: #333;
+}
+
+
+
+
+/* FOOTER */
+footer{
+    background: #333;
+    color: #EEEEEE;
+}
+footer a,
+footer a:hover{
+    color: #EEEEEE;
+    text-decoration: none;
+}
+footer .border-line{
+    border-bottom: 1px solid #666;
+}
+footer .row{
+    padding: 12px 0;
+}
+footer .box-alumns{
+    text-align: right;
+}
 
 
 

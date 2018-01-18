@@ -5,25 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Memezinga</title>
-    <link rel="stylesheet" type="text/css" href="css/meme-generator.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
-    <div class="general-container">
-        <div class="preview">
-            <div class="preview-image-container">
-                <img class="preview-image" src="images/ronaldo.jpg" />
-                <span class="preview-text-top"></span>
-                <span class="preview-text-bottom"></span>
-            </div>
-            <div class="preview-elements-container">
-                <input type="text" class="preview-text-top-input" maxlength="35" />
-                <input type="text" class="preview-text-bottom-input" maxlength="35" />
-                <input type="color" class="preview-text-color-input" value="#ffffff" />
-                <p class="button create">Create</p>
-            </div>
+    <!-- HEADER -->
+    <section class="header">
+        <div class="container">
+        	<div class="row">
+        		<div class="col-md-12">
+        		    <img src="img/logo.png"></img>
+        		</div>
+        	</div>
+        </div>  
+    </section>
+    <!-- end HEADER -->
+    
+    <!-- MEME GENERATOR BLOCK -->
+    <section>
+
+        <div class="container-fluid">
+        	<div class="row general-container">
+        		<div class="col-md-12">
+        			<div class="row preview">
+        			    <!-- MEME IMAGE BLOCK -->
+        				<div class="col-md-6 bg-gray">
+                            <div class="preview-image-container">
+                                <img class="preview-image" src="images/ronaldo.jpg" />
+                                <span class="preview-text-top"></span>
+                                <span class="preview-text-bottom"></span>
+                            </div>
+        				</div>
+        				<!-- end MEME IMAGE BLOCK -->
+
+        				<!-- INPUT BLOCK -->
+        				<div class="col-md-6">
+        				    <div class="box-input">
+                                <div class="preview-elements-container">
+                                    <div class="form-group">
+                                        <input type="text" class="preview-text-top-input" maxlength="35" placeholder="Texto superior"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="preview-text-bottom-input" maxlength="35" placeholder="Texto inferior"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="color" class="preview-text-color-input" value="#ffffff" />
+                                    </div>
+                                    <p class="button create">Create</p>
+                                </div>
+        				    </div>
+        				</div>
+        				<!-- end INPUT BLOCK -->
+                        
+                        <div class="img-container"></div>
+
+
+        			</div>
+        		</div>
+        	</div>
         </div>
-        <div class="img-container"></div>
-    </div>
+    </section>
+    <!-- end MEME GENERATOR BLOCK -->
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container-fluid border-line">
+            <div class="container">
+            	<div class="row">
+            		<div class="col-md-12">
+            			<div class="row">
+            				<div class="col-md-12">
+                                <div class="box-center">
+                                    <img src="img/twitter.png"></img>
+                                    <a href="https://twitter.com/awesomemzg" target="_blank">@awesomemzg</a>
+                                </div>
+            				</div>
+            			</div>
+            		</div>
+            	</div>
+            </div>        
+        </div>
+        <div class="container-fluid">
+            <div class="container">
+            	<div class="row">
+            		<div class="col-md-12">
+            			<div class="row">
+            				<div class="col-md-6">
+                                <span>Copyright Memezinga 2018</span>
+            				</div>
+            				<div class="col-md-6 box-alumns">
+                                <span>Realizado por alumnos de:</span>
+                                <img src="img/fictizia-logo.png"></img>
+            				</div>
+            			</div>
+            		</div>
+            	</div>
+            </div>        
+        </div>
+
+    </footer>
+    <!-- end FOOTER -->
+
     <script type="text/javascript" src="js/meme-generator.js"></script>
+    <script type="text/javascript" src="js/galery.js"></script>
+    
 </body>
 </html>
