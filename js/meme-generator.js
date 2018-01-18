@@ -122,11 +122,68 @@ var app = {
             ctx.strokeText(text, x, y);
             ctx.fillStyle = properties.textColor;
             ctx.fillText(text, x, y);
+        },
+        
+        captureImageId:function () {
+            return document.URL.match(/=(\d*)/g)[0].replace('=','')
+        },
+        
+        insertSelectedImage:function () {
+            var imagePreview = document.querySelector('.preview-image');
+            var selectedImageId = app.tools.captureImageId();
+            var memeList = JSON.parse(sessionStorage.getItem('memes')).data.memes;
+            memeList.forEach(function (element) {
+                if (element.id === selectedImageId) {
+                    app.tools.toDataURL(element.url,function (base64) {
+                        imagePreview.src = base64;
+                    })
+                }
+            });
+        },
+        
+        toDataURL:function (url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function() {
+                var reader = new FileReader();
+                reader.onloadend = function() {
+                    callback(reader.result);
+                }
+                reader.readAsDataURL(xhr.response);
+            };
+            xhr.open('GET', url);
+            xhr.responseType = 'blob';
+            xhr.send();
         }
+        
+        
     },
 };
 
 (function () {
     app.tools.previewImage();
     app.btnCreate.addEventListener('click',app.tools.create, true);
+    app.tools.insertSelectedImage();
 })();
+
+
+//Solution to CORS error
+//https://stackoverflow.com/questions/6150289/how-to-convert-image-into-base64-string-using-javascript
+/*
+function toDataURL(url, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function() {
+    var reader = new FileReader();
+    reader.onloadend = function() {
+      callback(reader.result);
+    }
+    reader.readAsDataURL(xhr.response);
+  };
+  xhr.open('GET', url);
+  xhr.responseType = 'blob';
+  xhr.send();
+}
+
+toDataURL('https://www.gravatar.com/avatar/d50c83cc0c6523b4d3f6085295c953e0', function(dataUrl) {
+  console.log('RESULT:', dataUrl)
+})
+*/
