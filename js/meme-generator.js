@@ -124,10 +124,16 @@ var app = {
             ctx.fillText(text, x, y);
         },
         
-        captureImageId:function () {
+        /**
+         * @description: get the id image selected from url.
+         */
+        getImageId:function () {
             return document.URL.match(/=(\d*)/g)[0].replace('=','')
         },
         
+        /**
+         * @description: insert the selected image in meme-generator page or component
+         */
         insertSelectedImage:function () {
             var imagePreview = document.querySelector('.preview-image');
             var selectedImageId = app.tools.captureImageId();
@@ -141,6 +147,9 @@ var app = {
             });
         },
         
+        /**
+         * @description: convert an image on base64 code. Temporal soluction to CORS error
+         */
         toDataURL:function (url, callback) {
             var xhr = new XMLHttpRequest();
             xhr.onload = function() {
