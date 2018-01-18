@@ -4,6 +4,7 @@ body{
 }
 .bg-gray{
     background: #E3E3E3;
+    padding: 50px;
 }
 .box-center{
     text-align: center;
@@ -57,6 +58,103 @@ body{
 .box-input{
     max-width: 400px;
     padding: 40px 0;
+    position: relative;
+    top: 50%;
+    margin-top: -150px;
+    margin-left: 50px;    
+}
+
+.form-group input[type=text]{
+    background: #EEEEEE;
+    font-size: 14px;
+    color: #B1B1B1;
+    letter-spacing: 0.12px;    
+    height: 45px;
+    line-height: 45px;
+    border: 0 none;
+    padding-left: 10px;
+    width: 100%;
+}
+
+
+.form-group input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #333;
+}
+.form-group input::-moz-placeholder { /* Firefox 19+ */
+  color: #333;
+}
+.form-group input:-ms-input-placeholder { /* IE 10+ */
+  color: #333;
+}
+.form-group input:-moz-placeholder { /* Firefox 18- */
+  color: #333;
+}
+
+/* Victor: Estilos del preview de la imagen; */
+.preview .preview-image-container img{
+    text-align: center;
+    width: 100%;    
+}
+
+.preview .preview-image-container {
+    position: relative;
+    display: inline-block;
+}
+.preview .preview-image-container .preview-text-top,
+.preview .preview-image-container .preview-text-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
+    letter-spacing: 2px;
+}
+.preview .preview-image-container .preview-text-top {
+    top: 0;
+}
+.preview .preview-image-container .preview-text-bottom {
+    bottom: 0;
+}
+/* End Victor */
+.create,
+#download{
+    background: #E5332A;
+    border-radius: 40px;
+    font-size: 14px;
+    color: #FFF;
+    letter-spacing: 2px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 150px;
+    margin: 0 auto;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.convert {
+    background-color: #2ecc71;
+}
+
+.img-container{
+    position: absolute;
+    background: #E3E3E3;
+    border: 1px solid #333;
+    text-align: center;
+    left: 50%;
+    margin-left: -500px;
+    z-index: 1;
+}
+.img-container img{
+    width: 100%;
+}
+.img-container a{
+    margin: 20px 0!important;
 }
 
 
@@ -70,3 +168,7 @@ footer{
     background: #333;
     color: #FFF;
 }
+
+
+
+

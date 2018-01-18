@@ -40,38 +40,47 @@
     
     <!-- MEME GENERATOR BLOCK -->
     <section>
+
         <div class="container-fluid">
-        	<div class="row">
+        	<div class="row general-container">
         		<div class="col-md-12">
-        			<div class="row">
-        			    
+        			<div class="row preview">
         			    <!-- MEME IMAGE BLOCK -->
         				<div class="col-md-6 bg-gray">
+                            <div class="preview-image-container">
+                                <img class="preview-image" src="images/ronaldo.jpg" />
+                                <span class="preview-text-top"></span>
+                                <span class="preview-text-bottom"></span>
+                            </div>
         				</div>
         				<!-- end MEME IMAGE BLOCK -->
-        				
-        				
+
         				<!-- INPUT BLOCK -->
         				<div class="col-md-6">
         				    <div class="box-input">
-        					    <form role="form">
-        						<div class="form-group">
-        							<input type="text" class="form-control" placeholder="Top Text" id="" />
-        						</div>
-        						<div class="form-group">
-        							<input type="text" class="form-control" placeholder="Bottom Text" id="" />
-        						</div>
-        						<button type="submit" class="btn btn-primary">
-        							Descargar
-        						</button>
-        					</form>
+                                <div class="preview-elements-container">
+                                    <div class="form-group">
+                                        <input type="text" class="preview-text-top-input" maxlength="35" placeholder="Texto superior"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="preview-text-bottom-input" maxlength="35" placeholder="Texto inferior"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="color" class="preview-text-color-input" value="#ffffff" />
+                                    </div>
+                                    <p class="button create">Create</p>
+                                </div>
         				    </div>
         				</div>
         				<!-- end INPUT BLOCK -->
+                        
+                        <div class="img-container"></div>
+
+
         			</div>
         		</div>
         	</div>
-        </div>        
+        </div>
     </section>
     <!-- end MEME GENERATOR BLOCK -->
 
@@ -81,7 +90,6 @@
         	<div class="row">
         		<div class="col-md-12 box-center">
         		    <h3>Galería del coleccionista</h3>
-        		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, orci quis dictum hendrerit, purus mi suscipit mauris, sit amet sagittis erat metus venenatis magna. Aenean et pharetra enim.</p>
         		</div>
         	</div>
         </div>
@@ -105,13 +113,16 @@
                     </div>
                     <div class="col-xs-6">
                         <span>Realizado por alumnos de:</span>
-                        <img src="../images/fictizia-logo.png"></img>
+                        <img src="img/fictizia-logo.png"></img>
                     </div>
                 </div>
             <div>
         <div>                
     </footer>
     <!-- end FOOTER -->
+
+    <script type="text/javascript" src="js/meme-generator.js"></script>
+
     
 </body>
 </html>
