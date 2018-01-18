@@ -24,7 +24,7 @@ var app = {
             imagePreview.width > 0 ? canvas.width = imagePreview.width : canvas.width = 300
             imagePreview.height > 0 ? canvas.height = imagePreview.height : canvas.height = 300
 
-            context.drawImage(imagePreview, 0, 0);
+            context.drawImage(imagePreview, 0, 0, imagePreview.width, imagePreview.height);
             
             if (textAbove) {
                 app.tools.drawStroked(context, textAbove, canvas.width / 2, properties.textPadding, properties);
@@ -136,7 +136,7 @@ var app = {
          */
         insertSelectedImage:function () {
             var imagePreview = document.querySelector('.preview-image');
-            var selectedImageId = app.tools.captureImageId();
+            var selectedImageId = app.tools.getImageId();
             var memeList = JSON.parse(sessionStorage.getItem('memes')).data.memes;
             memeList.forEach(function (element) {
                 if (element.id === selectedImageId) {
@@ -149,6 +149,7 @@ var app = {
         
         /**
          * @description: convert an image on base64 code. Temporal soluction to CORS error
+         * @see {@link https://stackoverflow.com/questions/6150289/how-to-convert-image-into-base64-string-using-javascript}
          */
         toDataURL:function (url, callback) {
             var xhr = new XMLHttpRequest();
@@ -173,26 +174,3 @@ var app = {
     app.btnCreate.addEventListener('click',app.tools.create, true);
     app.tools.insertSelectedImage();
 })();
-
-
-//Solution to CORS error
-//https://stackoverflow.com/questions/6150289/how-to-convert-image-into-base64-string-using-javascript
-/*
-function toDataURL(url, callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.onload = function() {
-    var reader = new FileReader();
-    reader.onloadend = function() {
-      callback(reader.result);
-    }
-    reader.readAsDataURL(xhr.response);
-  };
-  xhr.open('GET', url);
-  xhr.responseType = 'blob';
-  xhr.send();
-}
-
-toDataURL('https://www.gravatar.com/avatar/d50c83cc0c6523b4d3f6085295c953e0', function(dataUrl) {
-  console.log('RESULT:', dataUrl)
-})
-*/
