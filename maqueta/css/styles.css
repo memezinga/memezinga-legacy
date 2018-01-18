@@ -1,0 +1,72 @@
+/* GENERAL */
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+.bg-gray{
+    background: #E3E3E3;
+}
+.box-center{
+    text-align: center;
+}
+
+/* HEADER */
+.header{
+    background: #E23535;
+    color: #FFF;
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+}
+.header img{
+    width: 170px;    
+}
+
+/* SUBHEADER */
+.subheader{
+    background: #333;
+    color: #FFF;
+    padding: 80px 0;
+    text-align: center;
+}
+.subheader h3{
+    font-size: 80px;
+    font-family: OpenSans-Bold;
+    font-size: 62px;
+    letter-spacing: -1.5px;
+    line-height: 62px;    
+    margin-bottom: 20px;
+}
+.subheader p{
+    font-family: OpenSans;
+    font-size: 20px;
+    color: #777;
+    letter-spacing: 0.4px;
+    line-height: 28px;
+}
+.subheader p a{
+    font-family: OpenSans;
+    font-size: 20px;
+    color: #777;
+    letter-spacing: 0.4px;
+    line-height: 28px;
+    text-decoration: underline;
+}
+
+
+/* GENERATOR MEME */
+.box-input{
+    max-width: 400px;
+    padding: 40px 0;
+}
+
+
+/* GALLERY */
+.gallery{
+    padding: 60px 0;
+}
+
+
+footer{
+    background: #333;
+    color: #FFF;
+}
