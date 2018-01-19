@@ -211,6 +211,7 @@ body{
     font-size: 12px;
     text-align: center;
     margin-top: 10px;
+    cursor: default;
 }
 .containerImg:nth-child(odd) h4{
     color: #333;
@@ -233,7 +234,6 @@ body{
 footer{
     background: #333;
     color: #EEEEEE;
-    
 }
 footer a,
 footer a:hover{
