@@ -233,7 +233,6 @@ body{
 footer{
     background: #333;
     color: #EEEEEE;
-    
 }
 footer a,
 footer a:hover{
@@ -251,4 +250,26 @@ footer .box-alumns{
 }
 
 
+/* MOBILE VERSION */
+@media (max-width: 767px) {
+    .box-input {
+        max-width: 100%;
+        top: 0;
+        margin-top: 0;
+        margin-left: 0;
+    }
+    .containerImg {
+        width: calc(50% - 0px);
+    }    
+    .containerImg img{
+        height: 120px;
+    }
+    footer{
+        text-align: center;
+    }
+    footer .box-alumns {
+        text-align: center;
+        margin-top: 15px;
+    }    
+}
 
