@@ -17,20 +17,29 @@ Memezinga es un proyecto que ha nacido en el seno del master en programación de
 
 Ejercicio grupal desarrollado por el equipo de estudiantes:
 
-[Felix Rigau](https://github.com/felixrigau),
-[Victoria Solís](https://github.com/Vickysolo),
-[Iñigo Jorcano](https://github.com/inigojorcano)
-[Victor Rodriguez](https://github.com/vmrodriguez95)
-[David Salazar](https://github.com/k0sasp)
-[Jesus Esteban](https://github.com/txesus)
-[Elena Mateos](https://github.com/ElenaMLopez)
-[Ana 'Valkirian'](https://github.com/ValKiriann)
+* [Felix Rigau](https://github.com/felixrigau),
+
+* [Victoria Solís](https://github.com/Vickysolo),
+
+* [Iñigo Jorcano](https://github.com/inigojorcano),
+
+* [Victor Rodriguez](https://github.com/vmrodriguez95),
+
+* [David Salazar](https://github.com/k0sasp),
+
+* [Jesus Esteban](https://github.com/txesus),
+
+* [Elena Mateos](https://github.com/ElenaMLopez),
+
+* [Ana 'Valkirian'](https://github.com/ValKiriann),
 
 ## RELEASES:
 
 Las releases tendrán nombre de villanos famosos. Manténte actualizado para Tener la última versin prque seguiremos mejorndo.
 Todo ser anunciado en twitter :)
 
+
+## Contribuye ^.^:
 
 
 ### Tareas de Gulp
