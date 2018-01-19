@@ -1,33 +1,151 @@
-<html>
-    <head>
-        <title>Memezinga</title>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, user-scalable=no">
-        <link rel="icon" type="image/gif" href="https://media.giphy.com/media/OBVoMwJg3lYKA/giphy.gif">
-        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-    </head>
-    <body>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/jPj2MHAQgFs?controls=0&showinfo=0&rel=0&autoplay=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-        <div id="container">
-            <h1><i><span class="titleBig">Memezinga</span></i></h1>
-            <p class="subtitle">Lorem fistrum llevame al sircoo benemeritaar mamaar pecador. No puedor diodenoo diodeno benemeritaar. Llevame al sircoo a gramenawer diodeno la caidita caballo blanco caballo negroorl diodenoo a peich. Torpedo tiene musho peligro pupita no te digo trigo por no llamarte Rodrigor ese pedazo de no te digo trigo por no llamarte Rodrigor quietooor de la pradera sexuarl ese pedazo de está la cosa muy malar. La caidita por la gloria de mi madre quietooor te voy a borrar el cerito pupita ese pedazo de condemor diodeno. A wan mamaar de la pradera condemor la caidita pupita diodeno la caidita por la gloria de mi madre amatomaa.</p>
-            <div id="date">
-                <span id="days" class="hours">00</span>
-                <span class="dots">días</span>
-                <span id="hours" class="hours">00</span>
-                <span class="dots" >:</span>
-                <span id="minutes" class="hours">00</span>
-                <span class="dots">:</span>
-                <span id="seconds" class="hours">00</span>
-            </div>
-            <div class="meme">
-                <img src="https://media.giphy.com/media/xT0xeDR530kAAxS9oI/giphy.gif" />
-            </div>
-            <div class="containerHashtag">
-                <a target="_blank" class="button" href="https://twitter.com/intent/tweet?hashtags=memezinga&text=Alucina%20con%20estos%20memes%20http://osweekends.com/memezinga/">#memezinga</a>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Memezinga</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- HEADER -->
+    <section class="header">
+        <div class="container">
+        	<div class="row">
+        		<div class="col-md-12">
+        		    <img src="img/logo.png"></img>
+        		</div>
+        	</div>
+        </div>  
+    </section>
+    <!-- end HEADER -->
+
+
+    <!-- SUBHEADER -->
+    <section class="subheader">
+        <div class="container">
+        	<div class="row">
+        		<div class="col-md-12">
+        		    <h3>Generador de memes</h3>
+        		    <p>Memezinga nace de una idea loca cocinada en el Máster en Programación de aplicaciones con JavaScript y Node.js impartido por el gran <a href="https://twitter.com/kom_256" target="_blank">Ulises Gascón</a> en <a href="http://www.fictizia.com/" target="_blank">Fictizia</a>. Esta es la fase beta de esta idea y vamos a subir nuevas mejoras en breve, solo deciros que <a href="https://www.youtube.com/watch?v=hYkAsPxKJ3A" target="_blank">Estamos trabajando en ello</a>.</p>
+        		    <p>Para más info, dudas y sugerencias lo podéis hacer en nuestra cuenta de twitter: <a href="https://twitter.com/awesomemzg" target="_blank">@awesomemzg</a></p>
+        		</div>
+        	</div>
         </div>
-        <script type="text/javascript" src="js/script.js"></script>
-    </body>
+    </section>
+    <!-- end SUBHEADER -->
+    
+    <!-- MEME GENERATOR BLOCK -->
+    <section>
+
+        <div class="container-fluid">
+        	<div class="row general-container">
+        		<div class="col-md-12">
+        			<div class="row preview">
+        			    <!-- MEME IMAGE BLOCK -->
+        				<div class="col-md-6 bg-gray">
+                            <div class="preview-image-container">
+                                <img class="preview-image" src="images/ronaldo.jpg" />
+                                <span class="preview-text-top"></span>
+                                <span class="preview-text-bottom"></span>
+                            </div>
+        				</div>
+        				<!-- end MEME IMAGE BLOCK -->
+
+        				<!-- INPUT BLOCK -->
+        				<div class="col-md-6">
+        				    <div class="box-input">
+                                <div class="preview-elements-container">
+                                    <div class="form-group">
+                                        <input type="text" class="preview-text-top-input" maxlength="35" placeholder="Texto superior"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="preview-text-bottom-input" maxlength="35" placeholder="Texto inferior"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="color" class="preview-text-color-input" value="#ffffff" />
+                                    </div>
+                                    <p class="button create">Create</p>
+                                </div>
+        				    </div>
+        				</div>
+        				<!-- end INPUT BLOCK -->
+                        
+                        <div class="img-container"></div>
+
+
+        			</div>
+        		</div>
+        	</div>
+        </div>
+    </section>
+    <!-- end MEME GENERATOR BLOCK -->
+
+    <!-- GALLERY -->
+    <section class="gallery">
+        <div class="container-fluid">
+            <div class="box-center">
+                <h2>Galería del coleccionista</h2>
+            </div>
+            
+            <div id="backLoader">
+                <div class="posicionLoader">
+                    <img id="loader" src="images/load.svg">
+                </div>
+            </div>
+            <div id="content">
+            </div>
+
+        </div>
+        
+    </section>
+    <!-- end GALLERY -->
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container-fluid border-line">
+            <div class="container">
+            	<div class="row">
+            		<div class="col-md-12">
+            			<div class="row">
+            				<div class="col-md-12">
+                                <div class="box-center">
+                                    <img src="img/twitter.png"></img>
+                                    <a href="https://twitter.com/awesomemzg" target="_blank">@awesomemzg</a>
+                                </div>
+            				</div>
+            			</div>
+            		</div>
+            	</div>
+            </div>        
+        </div>
+        <div class="container-fluid">
+            <div class="container">
+            	<div class="row">
+            		<div class="col-md-12">
+            			<div class="row">
+            				<div class="col-md-6">
+                                <span>Copyright Memezinga 2018</span>
+            				</div>
+            				<div class="col-md-6 box-alumns">
+                                <span>Realizado por alumnos de:</span>
+                                <img src="img/fictizia-logo.png"></img>
+            				</div>
+            			</div>
+            		</div>
+            	</div>
+            </div>        
+        </div>
+
+    </footer>
+    <!-- end FOOTER -->
+
+    <script type="text/javascript" src="js/meme-generator.js"></script>
+    <script type="text/javascript" src="js/galery.js"></script>
+
+</body>
 </html>
