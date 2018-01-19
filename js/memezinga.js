@@ -140,14 +140,17 @@ var app = {
         insertSelectedImage:function () {
             var imagePreview = document.querySelector('.preview-image');
             var selectedImageId = app.tools.getImageId();
-            var memeList = JSON.parse(sessionStorage.getItem('memes')).data.memes;
-            memeList.forEach(function (element) {
-                if (element.id === selectedImageId) {
-                    app.tools.toDataURL(element.url,function (base64) {
-                        imagePreview.src = base64;
-                    })
-                }
-            });
+            if(sessionStorage.getItem('memes')){
+                var memeList = JSON.parse(sessionStorage.getItem('memes')).data.memes;
+                memeList.forEach(function (element) {
+                    if (element.id === selectedImageId) {
+                        app.tools.toDataURL(element.url,function (base64) {
+                            imagePreview.src = base64;
+                        })
+                    }
+                });                
+            }
+
         },
         
         /**
