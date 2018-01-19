@@ -1,3 +1,5 @@
+![](https://github.com/OSWeekends/memezinga/raw/development/designs/logomemezinga_yellow.png)
+
 # GENERADOR DE MEMES
 Mas conocido como MEMEZINGA, es un divertido generador automático de memes.
 Selecciona una imagen de la galería y haz click en ella. Luego tan solo tienes que poner tubrebe texto de la parte superior y el texto de la parte inferior.
