@@ -24,7 +24,7 @@ var app = {
             imagePreview.width > 0 ? canvas.width = imagePreview.width : canvas.width = 300
             imagePreview.height > 0 ? canvas.height = imagePreview.height : canvas.height = 300
 
-            context.drawImage(imagePreview, 0, 0);
+            context.drawImage(imagePreview, 0, 0, imagePreview.width, imagePreview.height);
             
             if (textAbove) {
                 app.tools.drawStroked(context, textAbove, canvas.width / 2, properties.textPadding, properties);
@@ -122,11 +122,55 @@ var app = {
             ctx.strokeText(text, x, y);
             ctx.fillStyle = properties.textColor;
             ctx.fillText(text, x, y);
+        },
+        
+        /**
+         * @description: get the id image selected from url.
+         */
+        getImageId:function () {
+            return document.URL.match(/=(\d*)/g)[0].replace('=','')
+        },
+        
+        /**
+         * @description: insert the selected image in meme-generator page or component
+         */
+        insertSelectedImage:function () {
+            var imagePreview = document.querySelector('.preview-image');
+            var selectedImageId = app.tools.getImageId();
+            var memeList = JSON.parse(sessionStorage.getItem('memes')).data.memes;
+            memeList.forEach(function (element) {
+                if (element.id === selectedImageId) {
+                    app.tools.toDataURL(element.url,function (base64) {
+                        imagePreview.src = base64;
+                    })
+                }
+            });
+        },
+        
+        /**
+         * @description: convert an image on base64 code. Temporal soluction to CORS error
+         * @see {@link https://stackoverflow.com/questions/6150289/how-to-convert-image-into-base64-string-using-javascript}
+         */
+        toDataURL:function (url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function() {
+                var reader = new FileReader();
+                reader.onloadend = function() {
+                    callback(reader.result);
+                }
+                reader.readAsDataURL(xhr.response);
+            };
+            xhr.open('GET', url);
+            xhr.responseType = 'blob';
+            xhr.send();
         }
+        
+        
     },
 };
 
 (function () {
     app.tools.previewImage();
     app.btnCreate.addEventListener('click',app.tools.create, true);
+    app.tools.insertSelectedImage();
 })();
