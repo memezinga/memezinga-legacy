@@ -159,7 +159,7 @@ body{
 
 /* GALLERY */
 .gallery{
-    padding: 60px 0;
+    padding: 60px 0 180px 0;
 }
 .gallery .container-fluid{
     padding: 0;
@@ -233,6 +233,9 @@ body{
 footer{
     background: #333;
     color: #EEEEEE;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 footer a,
 footer a:hover{
