@@ -244,6 +244,7 @@ footer a:hover{
 }
 footer .border-line{
     border-bottom: 1px solid #666;
+    display: none;
 }
 footer .row{
     padding: 12px 0;
@@ -255,6 +256,13 @@ footer .box-alumns{
 
 /* MOBILE VERSION */
 @media (max-width: 767px) {
+    .subheader{
+        padding: 40px 0;
+    }
+    .gallery {
+    padding: 60px 0;
+    }
+    
     .box-input {
         max-width: 100%;
         top: 0;
@@ -268,8 +276,18 @@ footer .box-alumns{
         height: 120px;
     }
     footer{
+        font-size: 10px;
         text-align: center;
+        position: relative;
     }
+    footer span{
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 10px;    
+    }
+    footer .row{
+        padding: 6px 0;
+    }    
     footer .box-alumns {
         text-align: center;
         margin-top: 15px;
