@@ -5,6 +5,7 @@ body{
 .bg-gray{
     background: #E3E3E3;
     padding: 50px;
+    text-align: center;
 }
 .box-center{
     text-align: center;
@@ -35,6 +36,7 @@ body{
     letter-spacing: -1.5px;
     line-height: 62px;    
     margin-bottom: 20px;
+    font-weight: 600;
 }
 .subheader p{
     font-size: 20px;
@@ -164,6 +166,7 @@ body{
 }
 .gallery .box-center h2{
     margin-bottom: 50px;
+    font-weight: 600;
 }
 #backLoader{
     background: #FFF;
