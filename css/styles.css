@@ -31,21 +31,18 @@ body{
 }
 .subheader h3{
     font-size: 80px;
-    font-family: OpenSans-Bold;
     font-size: 62px;
     letter-spacing: -1.5px;
     line-height: 62px;    
     margin-bottom: 20px;
 }
 .subheader p{
-    font-family: OpenSans;
     font-size: 20px;
     color: #777;
     letter-spacing: 0.4px;
     line-height: 28px;
 }
 .subheader p a{
-    font-family: OpenSans;
     font-size: 20px;
     color: #777;
     letter-spacing: 0.4px;
