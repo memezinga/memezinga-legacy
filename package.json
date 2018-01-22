@@ -1,5 +1,5 @@
 {
-  "name": "generador-de-memes",
+  "name": "memezinga",
   "version": "0.1.0",
   "description": "Generador de memes oficial de OSW",
   "main": "server.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/OSWeekends/generador-de-memes/issues/11.git"
+    "url": "https://github.com/OSWeekends/memezinga.git"
   },
   "author": {
     "name": "Open Source Weekends",
