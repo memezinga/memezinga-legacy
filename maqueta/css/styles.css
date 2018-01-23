@@ -276,6 +276,10 @@ footer .box-alumns{
     .containerImg img{
         height: 120px;
     }
+    .img-container{
+        left: 0;
+        margin-left: 0;
+    }
     footer{
         font-size: 10px;
         text-align: center;
