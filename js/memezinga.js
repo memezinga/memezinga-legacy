@@ -179,10 +179,21 @@ var app = {
     app.btnCreate.addEventListener('click',app.tools.create, true);
     app.tools.insertSelectedImage();
     
+    function scrollUp(){
+      if(window.scrollY != 0){
+        setTimeout(function(){
+          window.scrollTo(0, window.scrollY - 30);
+          scrollUp();
+        }, 5);
+      }
+    }
+  
     document.getElementById("content").addEventListener("click", function(e){
         if(e.target.nodeName === "IMG"){
             document.querySelector(".preview-image-container > img").src = e.target.getAttribute("src")
             updateQueryStringParam("id", e.target.getAttribute("data-id-img"))
+          
+            scrollUp();
         }
     })
     
