@@ -5,6 +5,7 @@ var app = {
     image:null,
     imagePreview:null,
     canvasFontSize:50,
+    paddingPreviewText:10,
     btnCreate: document.querySelector('.create'),
     tools:{
         /**
@@ -108,16 +109,18 @@ var app = {
                 previewTextWidth = span.offsetWidth;
                 
             while (imageWidth < previewTextWidth) {
-                app.canvasFontSize = app.canvasFontSize - 2;
+                app.canvasFontSize = app.canvasFontSize - 1;
                 span.style.fontSize = app.canvasFontSize.toString() + 'px';
                 previewTextWidth = span.offsetWidth;
             }
                 
-            // if(event.keyCode === 8){
-            //     if (imageWidth > previewTextWidth && app.canvasFontSize < 50) {
-            //         app.canvasFontSize = app.canvasFontSize + 4;
-            //         span.style.fontSize = app.canvasFontSize.toString() + 'px';
-            //     }
+            if(event.keyCode === 8 || event.keyCode === 46){ //If Backspace codeKey: 8, Backspace codeKey: 46
+                while (imageWidth > (previewTextWidth+app.paddingPreviewText) && app.canvasFontSize < 50){
+                    app.canvasFontSize = app.canvasFontSize + 1;
+                    span.style.fontSize = app.canvasFontSize.toString() + 'px';
+                    previewTextWidth = span.offsetWidth;
+                }
+            }
             // }else{
             //     if (imageWidth < previewTextWidth) {
             //         app.canvasFontSize = app.canvasFontSize - 4;
