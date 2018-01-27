@@ -4,6 +4,7 @@ var app = {
     canvas:null,
     image:null,
     imagePreview:null,
+    canvasFontSize:50,
     btnCreate: document.querySelector('.create'),
     tools:{
         /**
@@ -89,9 +90,41 @@ var app = {
          * @param {object} span - span where text is shown in the preview.
          */
         previewTextEvent: function(input, span) {
-            input.addEventListener("keyup", function() {
+            input.addEventListener("keyup", function(e) {
                 span.innerText = this.value.toUpperCase();
+                app.tools.validateWidthInputPreviewText(input, span, e);
             });
+        },
+        
+        /**
+         * @description: Valid that the text does not exceed the width of the 
+         * image and in this case modify the font size of the east
+         * @param {object} input - input type text where users write their own text.
+         * @param {object} span - span where text is shown in the preview.
+         * @param {object} event - event keyup.
+         */
+        validateWidthInputPreviewText:function (input, span, event) {
+            var imageWidth = document.querySelector('.preview-image').clientWidth,
+                previewTextWidth = span.offsetWidth;
+                
+            while (imageWidth < previewTextWidth) {
+                app.canvasFontSize = app.canvasFontSize - 2;
+                span.style.fontSize = app.canvasFontSize.toString() + 'px';
+                previewTextWidth = span.offsetWidth;
+            }
+                
+            // if(event.keyCode === 8){
+            //     if (imageWidth > previewTextWidth && app.canvasFontSize < 50) {
+            //         app.canvasFontSize = app.canvasFontSize + 4;
+            //         span.style.fontSize = app.canvasFontSize.toString() + 'px';
+            //     }
+            // }else{
+            //     if (imageWidth < previewTextWidth) {
+            //         app.canvasFontSize = app.canvasFontSize - 4;
+            //         span.style.fontSize = app.canvasFontSize.toString() + 'px';
+            //     }
+            // }
+            
         },
         /**
          * @description: if user change text color on input we get it and we give the color choosed to text.

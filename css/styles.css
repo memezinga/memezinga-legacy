@@ -118,11 +118,11 @@ body{
 .preview .preview-image-container .preview-text-top,
 .preview .preview-image-container .preview-text-bottom {
     color: #fff;
-    font-size: 50px;
-    box-sizing: border-box;
-    text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
-    letter-spacing: 2px;
     font-family: impact;
+    font-size: 50px;
+    letter-spacing: 2px;
+    text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
+    white-space: nowrap;
 }
 .preview .preview-image-container .text-wrapper-top {
     position: absolute;
