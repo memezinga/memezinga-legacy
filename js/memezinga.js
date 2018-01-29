@@ -229,8 +229,19 @@ var app = {
             xhr.send();
         },
         
-        
-        
+        resetValues:function () {
+            document.querySelector('.preview-text-top-input').value = '';
+            document.querySelector('.preview-text-top').innerText = '';
+            document.querySelector('.preview-text-top').style.fontSize = '';
+            document.querySelector('.preview-text-top').style.color = '';
+            document.querySelector('.preview-text-bottom-input').value = '';
+            document.querySelector('.preview-text-bottom').innerText = '';
+            document.querySelector('.preview-text-bottom').style.fontSize = '';
+            document.querySelector('.preview-text-bottom').style.color = '';
+            document.querySelector('.preview-text-color-input').value = '#ffffff';
+            app.canvasTextTopFontSize = 50;
+            app.canvasTextBottomFontSize = 50;
+        }
         
     },
 };
@@ -244,8 +255,9 @@ var app = {
     
     document.getElementById("content").addEventListener("click", function(e){
         if(e.target.nodeName === "IMG"){
-            document.querySelector(".preview-image-container > img").src = e.target.getAttribute("src")
-            updateQueryStringParam("id", e.target.getAttribute("data-id-img"))
+            document.querySelector(".preview-image-container > img").src = e.target.getAttribute("src");
+            updateQueryStringParam("id", e.target.getAttribute("data-id-img"));
+            app.tools.resetValues();
         }
     })
     
