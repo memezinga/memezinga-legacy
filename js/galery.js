@@ -11,7 +11,7 @@
             document.getElementById("backLoader").style.display="block";
             results.forEach(function(element, i){
                 setTimeout(function() {
-                    html = '<div class="containerImg"><a href="/meme-generator.html?id='+ element.id + '"><img src="' + element.url + '"><h4>' + element.name + '</h4></a></div>';
+                    html = '<div class="containerImg"><a href="../meme-generator.html?id='+ element.id + '"><img src="' + element.url + '"><h4>' + element.name + '</h4></a></div>';
                     document.querySelector("#content").innerHTML += html;
                     if(i>=results.length-1){
                         document.getElementById("backLoader").style.display="none";
