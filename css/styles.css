@@ -120,7 +120,7 @@ body{
     color: #fff;
     font-family: impact;
     font-size: 50px;
-    letter-spacing: 2px;
+    word-spacing: -2px;
     padding: 0 5px;
     text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
     white-space: nowrap;

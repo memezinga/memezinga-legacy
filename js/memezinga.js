@@ -4,7 +4,8 @@ var app = {
     canvas:null,
     image:null,
     imagePreview:null,
-    canvasFontSize:50,
+    canvasTextTopFontSize:50,
+    canvasTextBottomFontSize:50,
     paddingPreviewText:10,
     btnCreate: document.querySelector('.create'),
     tools:{
@@ -31,9 +32,11 @@ var app = {
             context.drawImage(imagePreview, 0, 0, imagePreview.width, imagePreview.height);
             
             if (textAbove) {
+                properties.textSize = app.canvasTextTopFontSize;
                 app.tools.drawStroked(context, textAbove, canvas.width / 2, properties.textPadding, properties);
             }
             if (textBelow) {
+                properties.textSize = app.canvasTextBottomFontSize;
                 app.tools.drawStroked(context, textBelow, canvas.width / 2, canvas.height - properties.textSize - (properties.textPadding / 2), properties);
             }
 
@@ -48,6 +51,7 @@ var app = {
                 textBelow = document.querySelector('.preview-text-bottom-input').value,
                 colorText = document.querySelector('.preview-text-color-input').value,
                 properties = {
+                    textTopSize: app.canvasTextTopFontSize,
                     textSize: 50,
                     textColor: colorText,
                     textPadding: 20,
@@ -81,8 +85,8 @@ var app = {
             var bottomPreviewText = document.querySelector('.preview-text-bottom');
             var previewTextColorInput = document.querySelector('.preview-text-color-input');
 
-            app.tools.previewTextEvent(topPreviewTextInput, topPreviewText);
-            app.tools.previewTextEvent(bottomPreviewTextInput, bottomPreviewText);
+            app.tools.previewTextEvent(topPreviewTextInput, topPreviewText, 'top');
+            app.tools.previewTextEvent(bottomPreviewTextInput, bottomPreviewText, 'bottom');
             app.tools.previewTextColorEvent(previewTextColorInput, topPreviewText, bottomPreviewText);
         },
         /**
@@ -90,10 +94,14 @@ var app = {
          * @param {object} input - input type text where users write their own text.
          * @param {object} span - span where text is shown in the preview.
          */
-        previewTextEvent: function(input, span) {
+        previewTextEvent: function(input, span, type) {
             input.addEventListener("keyup", function(e) {
                 span.innerText = this.value.toUpperCase();
-                app.tools.validateWidthInputPreviewText(input, span, e);
+                if(type === 'top'){
+                    app.tools.validateWidthInputPreviewTopText(input, span, e);
+                }else{
+                    app.tools.validateWidthInputPreviewBottomText(input, span, e);
+                }
             });
         },
         
@@ -104,30 +112,44 @@ var app = {
          * @param {object} span - span where text is shown in the preview.
          * @param {object} event - event keyup.
          */
-        validateWidthInputPreviewText:function (input, span, event) {
+        validateWidthInputPreviewTopText:function (input, span, event) {
             var imageWidth = document.querySelector('.preview-image').clientWidth,
                 previewTextWidth = span.offsetWidth;
                 
             while (imageWidth < previewTextWidth) {
-                app.canvasFontSize = app.canvasFontSize - 1;
-                span.style.fontSize = app.canvasFontSize.toString() + 'px';
+                app.canvasTextTopFontSize = app.canvasTextTopFontSize - 1;
+                span.style.fontSize = app.canvasTextTopFontSize.toString() + 'px';
                 previewTextWidth = span.offsetWidth;
             }
                 
             if(event.keyCode === 8 || event.keyCode === 46){ //If Backspace codeKey: 8, Backspace codeKey: 46
-                while (imageWidth > (previewTextWidth+app.paddingPreviewText) && app.canvasFontSize < 50){
-                    app.canvasFontSize = app.canvasFontSize + 1;
-                    span.style.fontSize = app.canvasFontSize.toString() + 'px';
+                while (imageWidth > (previewTextWidth+app.paddingPreviewText) && app.canvasTextTopFontSize < 50){
+                    app.canvasTextTopFontSize = app.canvasTextTopFontSize + 1;
+                    span.style.fontSize = app.canvasTextTopFontSize.toString() + 'px';
                     previewTextWidth = span.offsetWidth;
                 }
             }
-            // }else{
-            //     if (imageWidth < previewTextWidth) {
-            //         app.canvasFontSize = app.canvasFontSize - 4;
-            //         span.style.fontSize = app.canvasFontSize.toString() + 'px';
-            //     }
-            // }
-            
+
+        },
+        
+        validateWidthInputPreviewBottomText:function (input, span, event) {
+            var imageWidth = document.querySelector('.preview-image').clientWidth,
+                previewTextWidth = span.offsetWidth;
+                
+            while (imageWidth < previewTextWidth) {
+                app.canvasTextBottomFontSize = app.canvasTextBottomFontSize - 1;
+                span.style.fontSize = app.canvasTextBottomFontSize.toString() + 'px';
+                previewTextWidth = span.offsetWidth;
+            }
+                
+            if(event.keyCode === 8 || event.keyCode === 46){ //If Backspace codeKey: 8, Backspace codeKey: 46
+                while (imageWidth > (previewTextWidth+app.paddingPreviewText) && app.canvasTextBottomFontSize < 50){
+                    app.canvasTextBottomFontSize = app.canvasTextBottomFontSize + 1;
+                    span.style.fontSize = app.canvasTextBottomFontSize.toString() + 'px';
+                    previewTextWidth = span.offsetWidth;
+                }
+            }
+
         },
         /**
          * @description: if user change text color on input we get it and we give the color choosed to text.
