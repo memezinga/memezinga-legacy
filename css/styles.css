@@ -99,24 +99,41 @@ body{
     position: relative;
     display: inline-block;
 }
+
+/*.preview .preview-image-container .preview-text-top,*/
+/*.preview .preview-image-container .preview-text-bottom {*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    text-align: center;*/
+/*    color: #fff;*/
+/*    font-size: 50px;*/
+/*    padding: 10px;*/
+/*    box-sizing: border-box;*/
+/*    text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;*/
+/*    letter-spacing: 2px;*/
+/*    font-family: impact;*/
+/*}*/
+
 .preview .preview-image-container .preview-text-top,
 .preview .preview-image-container .preview-text-bottom {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    text-align: center;
     color: #fff;
+    font-family: impact;
     font-size: 50px;
-    padding: 10px;
-    box-sizing: border-box;
+    word-spacing: -2px;
+    padding: 0 5px;
     text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
-    letter-spacing: 2px;
+    white-space: nowrap;
 }
-.preview .preview-image-container .preview-text-top {
+.preview .preview-image-container .text-wrapper-top {
+    position: absolute;
     top: 0;
+    width: 100%;
 }
-.preview .preview-image-container .preview-text-bottom {
+.preview .preview-image-container .text-wrapper-bottom {
     bottom: 0;
+    position: absolute;
+    width: 100%;
 }
 /* End Victor */
 .create,
