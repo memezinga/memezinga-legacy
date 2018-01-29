@@ -212,26 +212,23 @@ body{
     cursor: pointer;
 }
 
-
-.containerImg:nth-child(odd){
-    background-color: #E3E3E3;
-}
-
-.containerImg:nth-child(even){
-    background-color: #333;
-}
-.containerImg h4{
-    color: #EEEEEE;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 12px;
+.containerText{
+    color: #ffff00;
+    position: absolute;
     text-align: center;
-    margin-top: 10px;
-    cursor: default;
+    font-size: 3em;
+    font-weight: bold;
+    font-family: 'Bangers', cursive;
+    transition: 0.5s;
+    background-color: #E23535;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    
 }
-.containerImg:nth-child(odd) h4{
-    color: #333;
+.containerText:hover{
+    transition: 0.5s;
+    opacity: 0.8;
 }
 
 .containerImg img{
