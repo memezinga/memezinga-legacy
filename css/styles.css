@@ -194,7 +194,15 @@ body{
     margin: -6px 0;  
     cursor: pointer;
 }
-
+/*.containerImg:hover:before{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width:100%;
+    background: rgba(226,53,53, .8);
+    position: absolute;
+}
+*/
 
 .containerImg:nth-child(odd){
     background-color: #E3E3E3;

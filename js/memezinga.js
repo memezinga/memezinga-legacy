@@ -192,22 +192,22 @@ var app = {
 // @see: https://gist.github.com/excalq/2961415
 
 function updateQueryStringParam(key, value) {
-  var baseUrl = [location.protocol, '//', location.host, location.pathname].join('');
-  var urlQueryString = document.location.search;
-  var newParam = key + '=' + value,
-  params = '?' + newParam;
+    var baseUrl = [location.protocol, '//', location.host, location.pathname].join('');
+    var urlQueryString = document.location.search;
+    var newParam = key + '=' + value,
+        params = '?' + newParam;
 
-  // If the "search" string exists, then build params from it
-  if (urlQueryString) {
-    var keyRegex = new RegExp('([\?&])' + key + '[^&]*');
-    // If param exists already, update it
-    if (urlQueryString.match(keyRegex) !== null) {
-      params = urlQueryString.replace(keyRegex, "$1" + newParam);
-    } else { // Otherwise, add it to end of query string
-      params = urlQueryString + '&' + newParam;
+    // If the "search" string exists, then build params from it
+    if (urlQueryString) {
+        var keyRegex = new RegExp('([\?&])' + key + '[^&]*');
+        // If param exists already, update it
+        if (urlQueryString.match(keyRegex) !== null) {
+            params = urlQueryString.replace(keyRegex, "$1" + newParam);
+        } else { // Otherwise, add it to end of query string
+            params = urlQueryString + '&' + newParam;
+        }
     }
-  }
-  window.history.replaceState({}, "", baseUrl + params);
+    window.history.replaceState({}, "", baseUrl + params);
 }
 
 
