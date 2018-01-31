@@ -11,6 +11,16 @@ body{
     text-align: center;
 }
 
+@font-face {
+	font-family: 'BADABB';
+	src: url('../fonts/BADABB.eot');
+	src: local('BADABB'), url('../fonts/BADABB.woff') format('woff'), url('../fonts/BADABB.ttf') format('truetype');
+}
+	
+
+
+
+
 /* HEADER */
 .header{
     background: #E23535;
@@ -210,16 +220,39 @@ body{
     position: relative;
     margin: -6px 0;  
     cursor: pointer;
+    position: relative;
 }
-/*.containerImg:hover:before{
-    content: "";
-    display: inline-block;
+.containerImg .hover-box{
+    display: none;
+}
+
+
+.containerImg:hover .hover-box{
+    display: block;
     height: 100%;
     width:100%;
     background: rgba(226,53,53, .8);
     position: absolute;
 }
-*/
+
+.containerImg .hover-box h4{
+    font-family: 'BADABB';
+    color: yellow;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 28px;
+    text-align: center;
+    margin-top: -14px;
+    cursor: default;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    letter-spacing: 1.8px;
+}
+
+
+
 
 .containerImg:nth-child(odd){
     background-color: #E3E3E3;
@@ -228,23 +261,11 @@ body{
 .containerImg:nth-child(even){
     background-color: #333;
 }
-.containerImg h4{
-    color: #EEEEEE;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 12px;
-    text-align: center;
-    margin-top: 10px;
-    cursor: default;
-}
-.containerImg:nth-child(odd) h4{
-    color: #333;
-}
+
 
 .containerImg img{
     width: 100%;
-    height: 240px;
+    height: 290px;
     object-fit: cover;
 }
 .containerImg a{
@@ -299,8 +320,37 @@ footer .box-alumns{
         width: calc(50% - 0px);
     }    
     .containerImg img{
-        height: 120px;
+        height: 160px;
     }
+    .containerImg .hover-box{
+        background: transparent;
+        display: block;
+    }
+    
+    .containerImg:nth-child(odd) .hover-box h4{
+        background-color: #E3E3E3;
+        color: #333;
+    }
+    
+    .containerImg:nth-child(even) .hover-box h4{
+        background-color: #333;
+        color: #FFF;
+    }
+
+
+
+    .containerImg .hover-box h4{
+        font-family: 'Open Sans', sans-serif;
+        font-size: 12px;
+        margin-top: 0;
+        position: absolute;
+        top: 80%;
+        letter-spacing: initial;
+        height: 20px;
+        line-height: 20px;
+    }    
+    
+    
     footer{
         font-size: 10px;
         text-align: center;
@@ -320,3 +370,7 @@ footer .box-alumns{
     }    
 }
 
+
+
+
+/* ANIMATION */

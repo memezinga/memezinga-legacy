@@ -254,6 +254,12 @@ var app = {
     app.tools.insertSelectedImage();
     
     document.getElementById("content").addEventListener("click", function(e){
+        //Scrool Animation when you click in image
+        scrollTo(document.body, 0, 1250);  
+        //var body = document.body;
+        //body.classList.add("animate");        
+        
+
         if(e.target.nodeName === "IMG"){
             document.querySelector(".preview-image-container > img").src = e.target.getAttribute("src");
             updateQueryStringParam("id", e.target.getAttribute("data-id-img"));
@@ -270,7 +276,6 @@ function updateQueryStringParam(key, value) {
     var baseUrl = [location.protocol, '//', location.host, location.pathname].join('');
     var urlQueryString = document.location.search;
     var newParam = key + '=' + value,
-<<<<<<< HEAD
         params = '?' + newParam;
 
     // If the "search" string exists, then build params from it
@@ -283,20 +288,6 @@ function updateQueryStringParam(key, value) {
             params = urlQueryString + '&' + newParam;
         }
     }
-=======
-    params = '?' + newParam;
-    
-    // If the "search" string exists, then build params from it
-    if (urlQueryString) {
-    var keyRegex = new RegExp('([\?&])' + key + '[^&]*');
-    // If param exists already, update it
-    if (urlQueryString.match(keyRegex) !== null) {
-      params = urlQueryString.replace(keyRegex, "$1" + newParam);
-    } else { // Otherwise, add it to end of query string
-      params = urlQueryString + '&' + newParam;
-    }
-    }
->>>>>>> fee3dfeff97d303ea85488862ea4288d8bb8d4c3
     window.history.replaceState({}, "", baseUrl + params);
 }
 
@@ -316,7 +307,7 @@ function updateQueryStringParam(key, value) {
             document.getElementById("backLoader").style.display="block";
             results.forEach(function(element, i){
                 setTimeout(function() {
-                    html = '<div class="containerImg"><img data-id-img="'+element.id+'" src="' + element.url + '"><h4>' + element.name + '</h4></div>';
+                    html = '<div class="containerImg"><div class="hover-box"><h4>' + element.name + '</h4></div><img data-id-img="'+element.id+'" src="' + element.url + '"></div>';
                     document.querySelector("#content").innerHTML += html;
                     if(i>=results.length-1){
                         document.getElementById("backLoader").style.display="none";
@@ -348,4 +339,6 @@ function updateQueryStringParam(key, value) {
     }
 }());
 
-    
+
+
+
