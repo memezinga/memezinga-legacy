@@ -255,7 +255,7 @@ var app = {
     
     document.getElementById("content").addEventListener("click", function(e){
         //Scrool Animation when you click in image
-        scrollTo(document.body, 0, 1250);  
+        scrollTo(document.body, 0, 0);  
         //var body = document.body;
         //body.classList.add("animate");        
         
