@@ -48,13 +48,9 @@
         			    <!-- MEME IMAGE BLOCK -->
         				<div class="col-md-6 bg-gray">
                             <div class="preview-image-container">
-                                <img crossOrigin="Anonymous" class="preview-image" src="images/ronaldo.jpg" />
-                                <div class="text-wrapper-top">
-                                    <span class="preview-text-top"></span>
-                                </div>
-                                <div class="text-wrapper-bottom">
-                                    <span class="preview-text-bottom"></span>
-                                </div>
+                                <img class="preview-image" src="images/ronaldo.jpg" />
+                                <span class="preview-text-top"></span>
+                                <span class="preview-text-bottom"></span>
                             </div>
         				</div>
         				<!-- end MEME IMAGE BLOCK -->
@@ -64,10 +60,10 @@
         				    <div class="box-input">
                                 <div class="preview-elements-container">
                                     <div class="form-group">
-                                        <input type="text" class="preview-text-top-input" placeholder="Texto superior"/>
+                                        <input type="text" class="preview-text-top-input" maxlength="35" placeholder="Texto superior"/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="preview-text-bottom-input" placeholder="Texto inferior"/>
+                                        <input type="text" class="preview-text-bottom-input" maxlength="35" placeholder="Texto inferior"/>
                                     </div>
                                     <div class="form-group">
                                         <input type="color" class="preview-text-color-input" value="#ffffff" />
@@ -147,16 +143,9 @@
 
     </footer>
     <!-- end FOOTER -->
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112755481-1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
 
-gtag('config', 'UA-112755481-1');
-</script>
-    <script type="text/javascript" src="js/memezinga.js"></script>
+    <script type="text/javascript" src="js/meme-generator.js"></script>
+    <script type="text/javascript" src="js/galery.js"></script>
 
 </body>
 </html>
