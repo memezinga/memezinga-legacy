@@ -241,7 +241,27 @@ var app = {
             document.querySelector('.preview-text-color-input').value = '#ffffff';
             app.canvasTextTopFontSize = 50;
             app.canvasTextBottomFontSize = 50;
+        },
+        
+
+        /**
+         * @description: Bucle for search image in JSON session Storage
+         */
+        memeSearch: function (datos, id){
+            var results = datos.data.memes;
+            var actualUrl = ""; 
+        
+            for (var i = 0; i< results.length; i++){
+                if(results[i].id === id){
+                    console.log(results[i].url);
+                    actualUrl = results[i].url;
+                    break;
+                }
+            }
+            return actualUrl;
         }
+        
+        
         
     },
 };
@@ -254,15 +274,22 @@ var app = {
     app.tools.insertSelectedImage();
     
     document.getElementById("content").addEventListener("click", function(e){
+
         //Scrool Animation when you click in image
         scrollTo(document.body, 0, 0);  
         //var body = document.body;
         //body.classList.add("animate");        
-        
 
-        if(e.target.nodeName === "IMG"){
-            document.querySelector(".preview-image-container > img").src = e.target.getAttribute("src");
+
+
+        
+        if(e.target.classList.contains("hover-box") || e.target.classList.contains("hover-text")){
+
+            var jsonMemes = JSON.parse(sessionStorage.getItem('memes'));
+            var dataImgMemes = e.target.getAttribute("data-id-img");
+
             updateQueryStringParam("id", e.target.getAttribute("data-id-img"));
+            document.querySelector(".preview-image-container > img").src = app.tools.memeSearch(jsonMemes, dataImgMemes);
             app.tools.resetValues();
         }
     })
@@ -307,7 +334,7 @@ function updateQueryStringParam(key, value) {
             document.getElementById("backLoader").style.display="block";
             results.forEach(function(element, i){
                 setTimeout(function() {
-                    html = '<div class="containerImg"><div class="hover-box"><h4>' + element.name + '</h4></div><img data-id-img="'+element.id+'" src="' + element.url + '"></div>';
+                    html = '<div class="containerImg"><div class="hover-box" data-id-img="'+element.id+'"><h4 class="hover-text" data-id-img="'+element.id+'">' + element.name + '</h4></div><img src="' + element.url + '"></div>';
                     document.querySelector("#content").innerHTML += html;
                     if(i>=results.length-1){
                         document.getElementById("backLoader").style.display="none";
@@ -316,6 +343,9 @@ function updateQueryStringParam(key, value) {
             });
         }
     }
+    
+    
+    
     
     function peticionAjax(url, callback) {
         var xmlHttp = new XMLHttpRequest();
