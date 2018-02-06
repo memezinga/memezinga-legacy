@@ -241,7 +241,27 @@ var app = {
             document.querySelector('.preview-text-color-input').value = '#ffffff';
             app.canvasTextTopFontSize = 50;
             app.canvasTextBottomFontSize = 50;
+        },
+        
+
+        /**
+         * @description: Bucle for search image in JSON session Storage
+         */
+        memeSearch: function (datos, id){
+            var results = datos.data.memes;
+            var actualUrl = ""; 
+        
+            for (var i = 0; i< results.length; i++){
+                if(results[i].id === id){
+                    console.log(results[i].url);
+                    actualUrl = results[i].url;
+                    break;
+                }
+            }
+            return actualUrl;
         }
+        
+        
         
     },
 };
@@ -254,9 +274,22 @@ var app = {
     app.tools.insertSelectedImage();
     
     document.getElementById("content").addEventListener("click", function(e){
-        if(e.target.nodeName === "IMG"){
-            document.querySelector(".preview-image-container > img").src = e.target.getAttribute("src");
+
+        //Scrool Animation when you click in image
+        scrollTo(document.body, 0, 0);  
+        //var body = document.body;
+        //body.classList.add("animate");        
+
+
+
+        
+        if(e.target.classList.contains("hover-box") || e.target.classList.contains("hover-text")){
+
+            var jsonMemes = JSON.parse(sessionStorage.getItem('memes'));
+            var dataImgMemes = e.target.getAttribute("data-id-img");
+
             updateQueryStringParam("id", e.target.getAttribute("data-id-img"));
+            document.querySelector(".preview-image-container > img").src = app.tools.memeSearch(jsonMemes, dataImgMemes);
             app.tools.resetValues();
         }
     })
@@ -270,17 +303,17 @@ function updateQueryStringParam(key, value) {
     var baseUrl = [location.protocol, '//', location.host, location.pathname].join('');
     var urlQueryString = document.location.search;
     var newParam = key + '=' + value,
-    params = '?' + newParam;
-    
+        params = '?' + newParam;
+
     // If the "search" string exists, then build params from it
     if (urlQueryString) {
-    var keyRegex = new RegExp('([\?&])' + key + '[^&]*');
-    // If param exists already, update it
-    if (urlQueryString.match(keyRegex) !== null) {
-      params = urlQueryString.replace(keyRegex, "$1" + newParam);
-    } else { // Otherwise, add it to end of query string
-      params = urlQueryString + '&' + newParam;
-    }
+        var keyRegex = new RegExp('([\?&])' + key + '[^&]*');
+        // If param exists already, update it
+        if (urlQueryString.match(keyRegex) !== null) {
+            params = urlQueryString.replace(keyRegex, "$1" + newParam);
+        } else { // Otherwise, add it to end of query string
+            params = urlQueryString + '&' + newParam;
+        }
     }
     window.history.replaceState({}, "", baseUrl + params);
 }
@@ -301,7 +334,7 @@ function updateQueryStringParam(key, value) {
             document.getElementById("backLoader").style.display="block";
             results.forEach(function(element, i){
                 setTimeout(function() {
-                    html = '<div class="containerImg"><div class="containerText">' + element.name + '</div><img data-id-img="'+element.id+'" src="' + element.url + '"></div>';
+                    html = '<div class="containerImg"><div class="hover-box" data-id-img="'+element.id+'"><h4 class="hover-text" data-id-img="'+element.id+'">' + element.name + '</h4></div><img src="' + element.url + '"></div>';
                     document.querySelector("#content").innerHTML += html;
                     if(i>=results.length-1){
                         document.getElementById("backLoader").style.display="none";
@@ -310,6 +343,9 @@ function updateQueryStringParam(key, value) {
             });
         }
     }
+    
+    
+    
     
     function peticionAjax(url, callback) {
         var xmlHttp = new XMLHttpRequest();
@@ -332,5 +368,3 @@ function updateQueryStringParam(key, value) {
         peticionAjax("https://api.imgflip.com/get_memes",pintar);
     }
 }());
-
-    
