@@ -226,7 +226,6 @@ body{
     display: none;
 }
 
-
 .containerImg:hover .hover-box{
     display: block;
     height: 100%;
@@ -250,9 +249,6 @@ body{
     top: 50%;
     letter-spacing: 1.8px;
 }
-
-
-
 
 .containerImg:nth-child(odd){
     background-color: #E3E3E3;

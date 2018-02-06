@@ -368,7 +368,3 @@ function updateQueryStringParam(key, value) {
         peticionAjax("https://api.imgflip.com/get_memes",pintar);
     }
 }());
-
-
-
-
