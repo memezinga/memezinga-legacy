@@ -1,10 +1,10 @@
+/*Lo dejo a parte por si lo queremos utilizar en otra página*/
 var botonAceptar_cookies = document.querySelector(".accept-cookies");
 
 if(localStorage.getItem("Cookies")){
     document.querySelector(".cookies").style.display = 'none'
 }else{
     botonAceptar_cookies.addEventListener("click",function(e){
-        console.log("estoy dentro");
         fade(document.querySelector(".cookies"));
         localStorage.setItem("Cookies","aceptadas");
     });
