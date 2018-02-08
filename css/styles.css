@@ -291,8 +291,24 @@ footer .row{
 footer .box-alumns{
     text-align: right;
 }
-
-
+.cookies{
+    position: fixed;
+    bottom: 80px;
+    width: 100%;
+    z-index: 999;
+}
+.contenedor-cookies{
+    text-align: center;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #333333cf;
+}
+.accept-cookies{
+    margin-left: 10px;
+}
+.contenedor-cookies a{
+    color: #E23535;
+}
 /* MOBILE VERSION */
 @media (max-width: 767px) {
     .subheader{
