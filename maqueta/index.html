@@ -7,10 +7,7 @@
     <title>Memezinga</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-   
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
 </head>
 <body>
     
@@ -51,13 +48,9 @@
         			    <!-- MEME IMAGE BLOCK -->
         				<div class="col-md-6 bg-gray">
                             <div class="preview-image-container">
-                                <img crossOrigin="Anonymous" class="preview-image" src="images/ronaldo.jpg" />
-                                <div class="text-wrapper-top">
-                                    <span class="preview-text-top"></span>
-                                </div>
-                                <div class="text-wrapper-bottom">
-                                    <span class="preview-text-bottom"></span>
-                                </div>
+                                <img class="preview-image" src="images/ronaldo.jpg" />
+                                <span class="preview-text-top"></span>
+                                <span class="preview-text-bottom"></span>
                             </div>
         				</div>
         				<!-- end MEME IMAGE BLOCK -->
@@ -67,22 +60,21 @@
         				    <div class="box-input">
                                 <div class="preview-elements-container">
                                     <div class="form-group">
-                                        <input type="text" class="preview-text-top-input" placeholder="Texto superior"/>
+                                        <input type="text" class="preview-text-top-input" maxlength="35" placeholder="Texto superior"/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="preview-text-bottom-input" placeholder="Texto inferior"/>
+                                        <input type="text" class="preview-text-bottom-input" maxlength="35" placeholder="Texto inferior"/>
                                     </div>
                                     <div class="form-group">
                                         <input type="color" class="preview-text-color-input" value="#ffffff" />
                                     </div>
-                                    
-                                    <a id="modal-563010" href="#modal-container-563010" role="button" class="button create" data-toggle="modal">Create</a>
+                                    <p class="button create">Create</p>
                                 </div>
         				    </div>
         				</div>
         				<!-- end INPUT BLOCK -->
                         
-                        
+                        <div class="img-container"></div>
 
 
         			</div>
@@ -106,18 +98,12 @@
             </div>
             <div id="content">
             </div>
+
         </div>
+        
     </section>
     <!-- end GALLERY -->
-    
-    <!-- COOKIES -->
-    <section class="cookies">
-        <div class="contenedor-cookies">
-            <span>Este sitio web utiliza cookies para mejorar la experiencia de usuario. Si continúa navegando daremos por aceptado su uso. <a href="/cookies.html">Más información</a></span>
-            <button class="accept-cookies">Aceptar</button>
-        </div>
-    </section>
-    <!-- end COOKIES -->
+
 
     <!-- FOOTER -->
     <footer>
@@ -158,44 +144,8 @@
     </footer>
     <!-- end FOOTER -->
 
-    <!-- MODAL -->
-		<div class="modal fade" id="modal-container-563010" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-					   	<h4 class="modal-title" id="myModalLabel">
-							¡¡¡¡Descarga tu Meme!!!!
-						</h4>
-						 
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-							×
-						</button>
-
-					</div>
-					<div class="modal-body">
-					    <div class="img-container"></div>
-					
-					</div>
-				</div>
-				
-			</div>
-			
-		</div>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112755481-1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'UA-112755481-1');
-</script>
-    <script type="text/javascript" src="js/memezinga.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/cookies.js"></script>
-
+    <script type="text/javascript" src="js/meme-generator.js"></script>
+    <script type="text/javascript" src="js/galery.js"></script>
 
 </body>
 </html>
