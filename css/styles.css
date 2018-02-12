@@ -243,7 +243,7 @@ body{
     font-size: 28px;
     text-align: center;
     margin-top: -14px;
-    cursor: default;
+    cursor: pointer;
     position: absolute;
     width: 100%;
     top: 50%;
