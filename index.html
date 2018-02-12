@@ -7,6 +7,8 @@
     <title>Memezinga</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+   
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
@@ -68,13 +70,14 @@
                                     <div class="form-group">
                                         <input type="color" class="preview-text-color-input" value="#ffffff" />
                                     </div>
-                                    <p class="button create">Create</p>
+                                    
+                                    <a id="modal-563010" href="#modal-container-563010" role="button" class="button create" data-toggle="modal">Create</a>
                                 </div>
         				    </div>
         				</div>
         				<!-- end INPUT BLOCK -->
                         
-                        <div class="img-container"></div>
+                        
 
 
         			</div>
@@ -143,8 +146,33 @@
 
     </footer>
     <!-- end FOOTER -->
+    <!-- MODAL -->
+		<div class="modal fade" id="modal-container-563010" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+					   	<h4 class="modal-title" id="myModalLabel">
+							¡¡¡¡Descarga tu Meme!!!!
+						</h4>
+						 
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							×
+						</button>
+
+					</div>
+					<div class="modal-body">
+					    <div class="img-container"></div>
+					
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
 
     <script type="text/javascript" src="js/memezinga.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
 </body>
 </html>
