@@ -146,6 +146,16 @@ body{
     width: 100%;
 }
 /* End Victor */
+
+a.button, 
+a.button:hover,
+a.button:focus,
+a.button:active,
+a.button:visited{
+    color: #fff;
+    outline: none;
+    text-decoration: none;
+}
 .create,
 #download{
     background: #E5332A;
@@ -168,13 +178,11 @@ body{
 }
 
 .img-container{
-    position: absolute;
     background: #E3E3E3;
     border: 1px solid #333;
     text-align: center;
-    left: 50%;
-    margin-left: -500px;
     z-index: 1;
+
 }
 .img-container img{
     width: 100%;
