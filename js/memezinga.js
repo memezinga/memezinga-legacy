@@ -272,15 +272,19 @@ var app = {
     app.tools.previewImage();
     app.btnCreate.addEventListener('click',app.tools.create, true);
     app.tools.insertSelectedImage();
+
+
+
     
     document.getElementById("content").addEventListener("click", function(e){
 
+        // Calc & Add height Header & Subheader
+        var heightHeader = document.getElementById('header').offsetHeight;;
+        var heightSubHeader = document.getElementById('subheader').offsetHeight;;
+        var sumHeight = heightHeader + heightSubHeader;
+        
         //Scrool Animation when you click in image
-        scrollTo(document.body, 0, 0);  
-        //var body = document.body;
-        //body.classList.add("animate");        
-
-
+        scrollTo(document.body, sumHeight, 0);  
 
         
         if(e.target.classList.contains("hover-box") || e.target.classList.contains("hover-text")){
