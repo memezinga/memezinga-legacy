@@ -276,8 +276,16 @@ var app = {
 
 
     
+    function scrollUp(){
+      if(window.scrollY != 0){
+        setTimeout(function(){
+          window.scrollTo(0, window.scrollY - 30);
+          scrollUp();
+        }, 5);
+      }
+    }
+  
     document.getElementById("content").addEventListener("click", function(e){
-
         // Calc & Add height Header & Subheader
         var heightHeader = document.getElementById('header').offsetHeight;;
         var heightSubHeader = document.getElementById('subheader').offsetHeight;;
@@ -295,6 +303,7 @@ var app = {
             updateQueryStringParam("id", e.target.getAttribute("data-id-img"));
             document.querySelector(".preview-image-container > img").src = app.tools.memeSearch(jsonMemes, dataImgMemes);
             app.tools.resetValues();
+
         }
     })
     
