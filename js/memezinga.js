@@ -378,6 +378,6 @@ function updateQueryStringParam(key, value) {
     if(sessionStorage.getItem('memes')){
         pintar(JSON.parse(sessionStorage.getItem('memes')));   
     }else{
-        peticionAjax("https://api.imgflip.com/get_memes",pintar);
+        peticionAjax("https://us-central1-memezinga.cloudfunctions.net/api",pintar);
     }
 }());
