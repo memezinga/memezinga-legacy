@@ -1,3 +1,6 @@
+# Privado
+secrets/
+
 # Logs
 logs
 *.log
