@@ -1,1 +1,75 @@
-<h1>Hello from file! MSG: <%= data %></h1>
+<!-- MEME GENERATOR BLOCK -->
+    <section>
+
+        <div class="container-fluid">
+        	<div class="row general-container">
+        		<div class="col-md-12">
+        			<div class="row preview">
+        			    <!-- MEME IMAGE BLOCK -->
+        				<div class="col-md-6 bg-gray">
+                            <div class="preview-image-container">
+                                <img crossOrigin="Anonymous" class="preview-image" src="images/ronaldo.jpg" />
+                                <div class="text-wrapper-top">
+                                    <span class="preview-text-top"></span>
+                                </div>
+                                <div class="text-wrapper-bottom">
+                                    <span class="preview-text-bottom"></span>
+                                </div>
+                            </div>
+        				</div>
+        				<!-- end MEME IMAGE BLOCK -->
+
+        				<!-- INPUT BLOCK -->
+        				<div class="col-md-6">
+        				    <div class="box-input">
+                                <div class="preview-elements-container">
+                                    <div class="form-group">
+                                        <input type="text" class="preview-text-top-input" placeholder="Texto superior"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="preview-text-bottom-input" placeholder="Texto inferior"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="color" class="preview-text-color-input" value="#ffffff" />
+                                    </div>
+                                    
+                                    <a id="modal-563010" href="#modal-container-563010" role="button" class="button create" data-toggle="modal">Create</a>
+                                </div>
+        				    </div>
+        				</div>
+        				<!-- end INPUT BLOCK -->
+                        
+                        
+
+
+        			</div>
+        		</div>
+        	</div>
+        </div>
+    </section>
+    <!-- end MEME GENERATOR BLOCK -->
+    
+    
+    <!-- MODAL -->
+		<div class="modal fade" id="modal-container-563010" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+					   	<h4 class="modal-title" id="myModalLabel">
+							¡¡¡¡Descarga tu Meme!!!!
+						</h4>
+						 
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							×
+						</button>
+
+					</div>
+					<div class="modal-body">
+					    <div class="img-container"></div>
+					
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>

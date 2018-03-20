@@ -13,27 +13,117 @@
     <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
 </head>
 <body>
-<div id="view"></div>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112755481-1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
 
-gtag('config', 'UA-112755481-1');
-</script>
-<!--
-    <script type="text/javascript" src="js/memezinga.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/cookies.js"></script>
--->
+    <!-- HEADER -->
+    <section class="header" id="header">
+        <div class="container">
+        	<div class="row">
+        		<div class="col-md-12">
+        		    <img src="img/logo.png"></img>
+        		</div>
+        	</div>
+        </div>  
+    </section>
+    <!-- end HEADER -->
 
-  
-  <script src="//unpkg.com/navigo"></script>
-  <script type="text/javascript" src="js/ejs.min.js"></script>
-  <script type="text/javascript" src="js/router.js"></script>
+
+    <!-- SUBHEADER -->
+    <section class="subheader" id="subheader">
+        <div class="container">
+        	<div class="row">
+        		<div class="col-md-12">
+        		    <h3>Generador de memes</h3>
+        		    <p>Memezinga nace de una idea loca cocinada en el Máster en Programación de aplicaciones con JavaScript y Node.js impartido por el gran <a href="https://twitter.com/kom_256" target="_blank">Ulises Gascón</a> en <a href="http://www.fictizia.com/" target="_blank">Fictizia</a>. Esta es la fase beta de esta idea y vamos a subir nuevas mejoras en breve, solo deciros que <a href="https://www.youtube.com/watch?v=hYkAsPxKJ3A" target="_blank">Estamos trabajando en ello</a>.</p>
+        		    <p>Para más info, dudas y sugerencias lo podéis hacer en nuestra cuenta de twitter: <a href="https://twitter.com/awesomemzg" target="_blank">@awesomemzg</a></p>
+        		</div>
+        	</div>
+        </div>
+    </section>
+    <!-- end SUBHEADER -->
+    
+    
+    <div id="view">
+        <h1>loading.....</h1>
+        <img src="img/party_hard.gif"></img>
+    </div>
+    
+    
+    <!-- COOKIES -->
+    <section class="cookies">
+        <div class="contenedor-cookies">
+            <span>Este sitio web utiliza cookies para mejorar la experiencia de usuario. Si continúa navegando daremos por aceptado su uso. <a href="/cookies.html">Más información</a></span>
+            <button class="accept-cookies btn btn-primary">Aceptar</button>
+        </div>
+    </section>
+    <!-- end COOKIES -->
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container-fluid border-line">
+            <div class="container">
+            	<div class="row">
+            		<div class="col-md-12">
+            			<div class="row">
+            				<div class="col-md-12">
+                                <div class="box-center">
+                                    <img src="img/twitter.png"></img>
+                                    <a href="https://twitter.com/awesomemzg" target="_blank">@awesomemzg</a>
+                                </div>
+            				</div>
+            			</div>
+            		</div>
+            	</div>
+            </div>        
+        </div>
+        <div class="container-fluid">
+            <div class="container">
+            	<div class="row">
+            		<div class="col-md-12">
+            			<div class="row">
+            				<div class="col-md-6">
+                                <span>Copyright Memezinga 2018</span>
+            				</div>
+            				<div class="col-md-6 box-alumns">
+                                <span>Realizado por alumnos de:</span>
+                                <img src="img/fictizia-logo.png"></img>
+            				</div>
+            			</div>
+            		</div>
+            	</div>
+            </div>        
+        </div>
+
+    </footer>
+    <!-- end FOOTER -->
+
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112755481-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'UA-112755481-1');
+    </script>
+
+    <!-- Our vendors! -->
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="//unpkg.com/navigo"></script>
+    <script type="text/javascript" src="js/vendor/ejs.min.js"></script>
+    
+    <!-- Our Scripts! -->
+    <!-- <script type="text/javascript" src="js/memezinga.js"></script> -->
+    <script type="text/javascript" src="js/utils.js"></script>
+    <!-- Controladores -->
+    <script type="text/javascript" src="js/controllers/create_gallery.js"></script>
+    <script type="text/javascript" src="js/controllers/create_meme.js"></script>
+    <script type="text/javascript" src="js/controllers/cookies.js"></script>
+    
+    <!-- Ruta -->
+    <script type="text/javascript" src="js/router.js"></script>
 
 </body>
 </html>

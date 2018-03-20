@@ -1,1 +1,25 @@
-<h1>Hello from file! MSG: <%= data %></h1>
+<!-- GALLERY -->
+    <section class="gallery">
+        <div class="container-fluid">
+            <div class="box-center">
+                <h2>Galería del coleccionista</h2>
+            </div>
+            
+            <div id="backLoader">
+                <div class="posicionLoader">
+                    <img id="loader" src="images/load.svg">
+                </div>
+            </div>
+            <div id="content">
+                  <% data.memes.forEach(function(meme){ %>
+                    <div class="containerImg">
+                        <div class="hover-box" data-id-img="<%= meme.id %>">
+                            <h4 class="hover-text" data-id-img="<%= meme.id %>"> <%= meme.name %></h4>
+                        </div>
+                        <img src="<%= meme.url %>">
+                    </div>
+                  <% }); %>
+            </div>
+        </div>
+    </section>
+    <!-- end GALLERY -->

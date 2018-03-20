@@ -1,4 +1,5 @@
-/*Lo dejo a parte por si lo queremos utilizar en otra página*/
+
+/* Cookies */
 var botonAceptar_cookies = document.querySelector(".accept-cookies");
 
 if(localStorage.getItem("Cookies")){
