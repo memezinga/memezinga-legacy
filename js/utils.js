@@ -25,7 +25,17 @@ function getItemById (id) {
 }
 
 
-//function renderEJS (obj){
+//function renderEJS ("plantilla_guay", {data:true}, "id_html")
+
+/*
+function renderEJS ({
+    templateName: "plantilla_guay",
+    data: {data:true},
+    id: "id_html",
+    cb: function(){}
+})
+*/
+
 function renderEJS (obj){
     //¿es un objeto o 3 cosas?
     var templateName, data, id, cb;
