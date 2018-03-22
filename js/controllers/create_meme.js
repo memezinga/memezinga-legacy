@@ -97,22 +97,16 @@ function selectorsContent () {
 
 function createMemeCtr(params){
     console.log("Estas en Create_meme.js")
+    var url = "https://us-central1-memezinga.cloudfunctions.net/memes?id=" + params.idMeme
+    console.log("url:", url)
+    ajaxJson( url,function(data){
 
-        ajaxJson("https://us-central1-memezinga.cloudfunctions.net/api",function(data){
-        
-        // --001 Filtrar la lista... (Esto luego será /api/meme/:id)
-        var memedata;
-        for (var i = 0; i < data.data.memes.length; i++) {
-            if(data.data.memes[i].id === params.idMeme) {
-                memedata = data.data.memes[i];
-            }
-        }
-        
-        // --001 FIN FILTRO....
+        var memedata = typeof(data) === "object"? true : false;
+
         console.log("memedata:", memedata)
         renderEJS ({
             templateName: memedata ? "create_meme" : "404",
-            data: {meme: memedata}, 
+            data: {meme: data}, 
             id: "view",
             cb: function(){
                 var selectors = selectorsContent()

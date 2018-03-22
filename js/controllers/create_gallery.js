@@ -3,7 +3,7 @@
 /*global router*/
 
 function TemplatesgalleryCtr(){
-    ajaxJson("https://us-central1-memezinga.cloudfunctions.net/api",function(data){
+    ajaxJson("https://us-central1-memezinga.cloudfunctions.net/memes",function(data){
         renderEJS ({
             templateName: "create_gallery",
             data: data.data, 
