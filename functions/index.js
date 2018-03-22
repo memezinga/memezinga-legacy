@@ -1,33 +1,33 @@
 const functions = require('firebase-functions'),
     admin = require('firebase-admin'),
-    request = require('request'),
-    gcloud = require('google-cloud');
+    request = require('request');
 
-const serviceAccount = require("./memezinga-firebase-adminsdk-csaaf-07394a324f.json");
-
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://memezinga.firebaseio.com"
-});
-
-const storage = gcloud.storage({
-    projectId: serviceAccount.project_id,
-    keyFilename: 'service-account-credentials.json',
-});
-
-const bucket = storage.bucket(`${serviceAccount.project_id}.appspot.com`)
-
-
-exports.api = functions.https.onRequest((req, res) => {
+exports.memes = functions.https.onRequest((req, res) => {
     request("https://api.imgflip.com/get_memes", { json: true }, (error, response, body) => {
-
+        //CORS
         res.header("Access-Control-Allow-Origin", "*");
         res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-   
+        
+        //Filter
+        var match = false;
+        if(req.query.id) {
+            for (var i = 0; i < body.data.memes.length; i++) {
+                if(body.data.memes[i].id === req.query.id) {
+                    body = body.data.memes[i];
+                    match = true;
+                    break;
+                }
+            }
+        }
+        
+        //Erorr Management
         if (error) { 
-            console.log(error)
-            res.json(JSON.stringify(error))
+            res.status(500).json("Our server is broken again.. xD");
+            console.log("e500:", error)
+        } else if (req.query.id && !match) {
+            res.status(404).json("error! meme not found! :-(");
+            console.log("e400 ID:", req.query.id)
         } else {
             res.json(body)
         }
@@ -35,48 +35,3 @@ exports.api = functions.https.onRequest((req, res) => {
     });
 });
 
-exports.upload = functions.https.onRequest((req, res) => {
-    let storageRef = admin.storage().bucket().ref();
-    
-    function downloadImg (item) {
-        const extension = item.url.slice(-3);
-        const location = `./img/${item.id}.${extension}`
-        const options = {
-            url: item.url,
-            encoding: null
-        };
-    
-        request(options, (err, res, body) => {
-            if(!err){
-                const buffer = Buffer.from(body, 'utf8');
-                fs.writeFileSync(location, buffer)
-                console.log("Downloaded as:", location)
-                let uploadTask = storageRef.child('images/octofez.png').put(buffer);
-                uploadTask.on('state_changed', function(snapshot){
-                    console.log(`state_changed with ${item.id}:`, snapshot);
-                }, function(error) {
-                    console.error(`Error with ${item.id}:`, error);
-                }, function() {
-                    var downloadURL = uploadTask.snapshot.downloadURL;
-                    console.log(`END with ${item.id}:`, downloadURL);
-                });
-            } else {
-                console.error("-- ERROR", err)
-            }
-
-            
-        })
-    }
-    
-    request("https://api.imgflip.com/get_memes", { json: true }, (err, res, body) => {
-        if (err) { return console.log(err); }
-        let data = body.data;
-        console.log("data:", data.memes)
-        data.memes.forEach((item)=>{
-            downloadImg(item);
-        })
-    });
-
-
-
-})
