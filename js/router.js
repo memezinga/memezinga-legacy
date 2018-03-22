@@ -3,14 +3,14 @@
 /*global router*/
 /*global renderEJS*/
 /*global TemplatesgalleryCtr*/
-
+/*global createMemeCtr*/
 
 // use #! to hash
 router = new Navigo(null, true, '#!');
 router.on({
     // 'view' is the id of the div element inside which we render the HTML
     'create': () => { TemplatesgalleryCtr() },
-    'create/:idMeme': (params) => { renderEJS('create_meme', "Crear MEME - muestra nuestro meme con el formulario... ID:" + params.idMeme, 'view') },
+    'create/:idMeme': (params) => { createMemeCtr(params)},
     'profile': () => { renderEJS('profile_user', "Perfil - Información mía que solo veo como usuario logeando", 'view') },
     'profile/:idUser': (params) => { renderEJS('profile_user_public', "Perfil - Información pública de cualquier perfil ID:" + params.idUser, 'view') },
     'meme/:idMeme': (params) => { renderEJS('meme_details', "Meme en detalle - Sale la plantilla usada + el meme en si + el contexto ID:" + params.idMeme, 'view') }
